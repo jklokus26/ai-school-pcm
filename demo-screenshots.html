@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo Screenshots - AI 101</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+            background: #f5f5f5;
+            margin: 0;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        h1 {
+            color: #667eea;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .demo-section {
+            margin-bottom: 50px;
+            border: 2px solid #e5e7eb;
+            border-radius: 10px;
+            padding: 30px;
+        }
+        
+        .demo-title {
+            color: #764ba2;
+            font-size: 1.8em;
+            margin-bottom: 20px;
+        }
+        
+        .input-box {
+            background: #f9fafb;
+            border: 2px solid #d1d5db;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 15px 0;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9em;
+            white-space: pre-wrap;
+        }
+        
+        .output-box {
+            background: #f0f9ff;
+            border: 2px solid #0ea5e9;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 15px 0;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9em;
+            white-space: pre-wrap;
+        }
+        
+        .prompt-box {
+            background: #fef3c7;
+            border: 2px solid #f59e0b;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 15px 0;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9em;
+            white-space: pre-wrap;
+        }
+        
+        .label {
+            font-weight: bold;
+            color: #374151;
+            margin-bottom: 10px;
+            display: block;
+        }
+        
+        .copy-btn {
+            background: #667eea;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 0.8em;
+            margin-top: 10px;
+        }
+        
+        .copy-btn:hover {
+            background: #764ba2;
+        }
+        
+        .instructions {
+            background: #ecfdf5;
+            border-left: 4px solid #10b981;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        
+        .instructions h3 {
+            color: #065f46;
+            margin-top: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎬 Demo Materials - AI 101 Day 1</h1>
+        <p style="text-align: center; color: #666; font-size: 1.1em;">
+            Copy-paste these materials during your live demos
+        </p>
+        
+        <!-- Demo 1: Notes to Email -->
+        <div class="demo-section">
+            <h2 class="demo-title">Demo 1: Messy Notes → Professional Email</h2>
+            
+            <div class="instructions">
+                <h3>📋 Instructions:</h3>
+                <ol>
+                    <li>Show the messy notes below to participants</li>
+                    <li>Explain: "I need to turn this into an email my team can actually use"</li>
+                    <li>Copy-paste the prompt into ChatGPT/Claude</li>
+                    <li>Run it and highlight the results</li>
+                </ol>
+            </div>
+            
+            <div>
+                <span class="label">📝 Messy Notes (show this first):</span>
+                <div class="input-box" id="notes1">talked to sarah about the q4 campaign
+she wants to push launch to dec 15 instead of dec 1
+budget is approved - 50k but still needs final sign off from mark
+need to loop in content team asap because timeline is tight
+also she mentioned the new brand guidelines are ready we should use them
+wants weekly check-ins starting next week</div>
+                <button class="copy-btn" onclick="copyToClipboard('notes1')">Copy Notes</button>
+            </div>
+            
+            <div>
+                <span class="label">🤖 Your Prompt (copy-paste this):</span>
+                <div class="prompt-box" id="prompt1">You are a communications assistant. Using the notes below, draft a concise email to my team in a friendly, professional tone. Keep it under 120 words. End with 2 actionable next steps.
+
+Notes:
+talked to sarah about the q4 campaign
+she wants to push launch to dec 15 instead of dec 1
+budget is approved - 50k but still needs final sign off from mark
+need to loop in content team asap because timeline is tight
+also she mentioned the new brand guidelines are ready we should use them
+wants weekly check-ins starting next week</div>
+                <button class="copy-btn" onclick="copyToClipboard('prompt1')">Copy Prompt</button>
+            </div>
+            
+            <div>
+                <span class="label">✅ Expected Output (AI will generate something like this):</span>
+                <div class="output-box">Subject: Q4 Campaign Update – Timeline Change
+
+Hi team,
+
+Quick update from my call with Sarah:
+
+• Launch date moving to Dec 15 (was Dec 1)
+• Budget approved at $50K, pending Mark's final sign-off
+• New brand guidelines are ready—we should incorporate them
+• Weekly check-ins start next week
+
+The tighter timeline means we need to move quickly.
+
+Next steps:
+1. Loop in content team immediately
+2. I'll schedule our first weekly check-in for next Tuesday
+
+Let me know if you have questions!</div>
+            </div>
+        </div>
+        
+        <!-- Demo 2: Extract Actions -->
+        <div class="demo-section">
+            <h2 class="demo-title">Demo 2: Extract Action Items + Owners</h2>
+            
+            <div class="instructions">
+                <h3>📋 Instructions:</h3>
+                <ol>
+                    <li>Show the paragraph below to participants</li>
+                    <li>Explain: "We need to pull out who's doing what by when"</li>
+                    <li>Copy-paste the prompt into ChatGPT/Claude</li>
+                    <li>Run it and highlight the structured results</li>
+                </ol>
+            </div>
+            
+            <div>
+                <span class="label">📝 Meeting Notes Paragraph (show this first):</span>
+                <div class="input-box" id="notes2">In today's standup, we decided Sarah will draft the project outline and send it to the team by Friday EOD. Mark needs to review the budget spreadsheet and get back to us with questions or approval by Wednesday at noon. I'll schedule a follow-up call with the client for next Monday at 2pm, and everyone should review the new brand guidelines before our next team sync on December 15th. Also, someone needs to update the shared calendar with all these deadlines—I'll take that one.</div>
+                <button class="copy-btn" onclick="copyToClipboard('notes2')">Copy Notes</button>
+            </div>
+            
+            <div>
+                <span class="label">🤖 Your Prompt (copy-paste this):</span>
+                <div class="prompt-box" id="prompt2">Extract all action items from the text below. For each item, list:
+- Owner (who's responsible)
+- Task (what they need to do)
+- Deadline (when it's due)
+
+Format as a simple table.
+
+Text:
+In today's standup, we decided Sarah will draft the project outline and send it to the team by Friday EOD. Mark needs to review the budget spreadsheet and get back to us with questions or approval by Wednesday at noon. I'll schedule a follow-up call with the client for next Monday at 2pm, and everyone should review the new brand guidelines before our next team sync on December 15th. Also, someone needs to update the shared calendar with all these deadlines—I'll take that one.</div>
+                <button class="copy-btn" onclick="copyToClipboard('prompt2')">Copy Prompt</button>
+            </div>
+            
+            <div>
+                <span class="label">✅ Expected Output (AI will generate something like this):</span>
+                <div class="output-box">| Owner    | Task                                      | Deadline               |
+|----------|-------------------------------------------|------------------------|
+| Sarah    | Draft project outline and send to team    | Friday EOD             |
+| Mark     | Review budget spreadsheet                 | Wednesday at noon      |
+| [You]    | Schedule follow-up call with client       | Next Monday at 2pm     |
+| Everyone | Review new brand guidelines               | December 15th          |
+| [You]    | Update shared calendar with deadlines     | ASAP                   |</div>
+            </div>
+        </div>
+        
+        <!-- Quick Reference -->
+        <div class="demo-section">
+            <h2 class="demo-title">⚡ Quick Reference</h2>
+            <div class="instructions">
+                <h3>🎯 Teaching Points to Highlight:</h3>
+                <ul>
+                    <li><strong>Demo 1:</strong> "Look at the structure... the tone... the next steps. This took 15 seconds!"</li>
+                    <li><strong>Demo 2:</strong> "AI found all 5 tasks... structured them consistently... ready to paste into your task tracker"</li>
+                    <li><strong>Both:</strong> "This is a DRAFT - you'd still edit it, but it saved you 10 minutes"</li>
+                </ul>
+                
+                <h3>🔄 If Something Goes Wrong:</h3>
+                <ul>
+                    <li><strong>Slow response:</strong> "Perfect example of why we iterate!"</li>
+                    <li><strong>Wrong output:</strong> "Let me refine this - that's the iterative part!"</li>
+                    <li><strong>Tech glitch:</strong> "Great example of why we fact-check AI!"</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        function copyToClipboard(elementId) {
+            const element = document.getElementById(elementId);
+            const text = element.textContent;
+            
+            navigator.clipboard.writeText(text).then(function() {
+                // Change button text temporarily
+                const button = element.nextElementSibling;
+                const originalText = button.textContent;
+                button.textContent = 'Copied!';
+                button.style.background = '#10b981';
+                
+                setTimeout(() => {
+                    button.textContent = originalText;
+                    button.style.background = '#667eea';
+                }, 2000);
+            }).catch(function(err) {
+                console.error('Could not copy text: ', err);
+                alert('Copy failed. Please select and copy manually.');
+            });
+        }
+    </script>
+</body>
+</html>
