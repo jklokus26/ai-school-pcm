@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI 101 - Day 2: Core Tools - Claude & ChatGPT</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #333;
+            overflow: hidden;
+        }
+
+        .slide-container {
+            display: none;
+            width: 100vw;
+            height: 100vh;
+            padding: 60px;
+            background: white;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .slide-container.active {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            animation: fadeIn 0.5s;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        h1 {
+            font-size: 4em;
+            color: #667eea;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 3em;
+            color: #764ba2;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        h3 {
+            font-size: 2em;
+            color: #667eea;
+            margin-bottom: 25px;
+            text-align: left;
+            width: 100%;
+        }
+
+        .subtitle {
+            font-size: 2em;
+            color: #666;
+            text-align: center;
+        }
+
+        ul {
+            font-size: 1.8em;
+            line-height: 1.8;
+            max-width: 900px;
+            width: 100%;
+            text-align: left;
+        }
+
+        li {
+            margin-bottom: 20px;
+            padding-left: 20px;
+        }
+
+        .highlight {
+            background: #fef3c7;
+            padding: 3px 8px;
+            border-radius: 4px;
+        }
+
+        .big-text {
+            font-size: 2.5em;
+            color: #333;
+            max-width: 1000px;
+            line-height: 1.6;
+            text-align: center;
+        }
+
+        .controls {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            display: flex;
+            gap: 15px;
+            z-index: 1000;
+        }
+
+        button {
+            background: #667eea;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.2em;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        button:hover {
+            background: #764ba2;
+            transform: scale(1.05);
+        }
+
+        .slide-number {
+            position: fixed;
+            bottom: 30px;
+            left: 30px;
+            font-size: 1.2em;
+            color: #666;
+        }
+
+        .demo-box {
+            background: #1f2937;
+            color: #10b981;
+            padding: 30px;
+            border-radius: 10px;
+            font-family: 'Courier New', monospace;
+            font-size: 1.4em;
+            max-width: 900px;
+            width: 100%;
+            text-align: left;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- Slide 1: Title -->
+    <div class="slide-container active" data-slide="1">
+        <h1>AI 101</h1>
+        <h2>Day 2: Core Tools - Claude & ChatGPT</h2>
+        <p class="subtitle">When to use which—practical tool comparison</p>
+    </div>
+
+    <!-- Slide 2: Quick Recap -->
+    <div class="slide-container" data-slide="2">
+        <h2>📝 Quick Recap: Day 1</h2>
+        <div style="max-width: 1100px;">
+            <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 35px; border-radius: 15px; margin-bottom: 30px; text-align: center;">
+                <p style="font-size: 1.8em; margin: 0; line-height: 1.4;">
+                    <strong>AI = Smart Intern</strong><br>
+                    <span style="font-size: 0.8em; opacity: 0.9;">Clear instructions → Great results</span>
+                </p>
+            </div>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 25px;">
+                <div style="background: #fef3c7; padding: 25px; border-radius: 12px; text-align: center;">
+                    <div style="font-size: 2.5em; margin-bottom: 10px;">🎯</div>
+                    <div style="font-size: 1.3em; font-weight: bold; color: #92400e;">The Recipe</div>
+                    <div style="font-size: 1em; color: #78350f; margin-top: 10px;">Role, Context, Task, Constraints, Format, Examples</div>
+                </div>
+
+                <div style="background: #dbeafe; padding: 25px; border-radius: 12px; text-align: center;">
+                    <div style="font-size: 2.5em; margin-bottom: 10px;">🔄</div>
+                    <div style="font-size: 1.3em; font-weight: bold; color: #1e40af;">Iterate</div>
+                    <div style="font-size: 1em; color: #1e3a8a; margin-top: 10px;">First prompt is rarely perfect</div>
+                </div>
+
+                <div style="background: #dcfce7; padding: 25px; border-radius: 12px; text-align: center;">
+                    <div style="font-size: 2.5em; margin-bottom: 10px;">✅</div>
+                    <div style="font-size: 1.3em; font-weight: bold; color: #166534;">Verify</div>
+                    <div style="font-size: 1em; color: #14532d; margin-top: 10px;">Always fact-check outputs</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 3: Today's Focus -->
+    <div class="slide-container" data-slide="3">
+        <h2>🎯 Today's Focus</h2>
+        <div style="max-width: 1000px;">
+            <div style="background: #f0f9ff; border: 3px solid #0ea5e9; border-radius: 15px; padding: 35px; margin-bottom: 30px;">
+                <p style="font-size: 1.6em; color: #0c4a6e; margin: 0; text-align: center; line-height: 1.6;">
+                    <strong>Pragmatic tool talk:</strong> When to use Claude vs ChatGPT<br>
+                    <span style="font-size: 0.8em; opacity: 0.8;">Not a feature dump—real-world use cases</span>
+                </p>
+            </div>
+
+            <ul style="font-size: 1.5em; line-height: 1.9;">
+                <li><strong>0–8 min:</strong> Claude vs ChatGPT at a glance</li>
+                <li><strong>8–18 min:</strong> Projects/knowledge spaces (persistent context)</li>
+                <li><strong>18–28 min:</strong> Live demo—upload PDF → TL;DR + questions</li>
+                <li><strong>28–40 min:</strong> Exercise: create your workspace</li>
+                <li><strong>40–52 min:</strong> Prompt refinements (before/after)</li>
+                <li><strong>52–60 min:</strong> Q&A + capture best prompts</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Slide 4: Claude vs ChatGPT - At a Glance -->
+    <div class="slide-container" data-slide="4">
+        <h2>Claude vs ChatGPT: At a Glance</h2>
+        <div style="max-width: 1400px;">
+            <table style="width: 100%; border-collapse: collapse; margin-bottom: 30px; font-size: 1.15em;">
+                <thead>
+                    <tr style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white;">
+                        <th style="padding: 18px; text-align: left; border: 1px solid #ddd;">Feature</th>
+                        <th style="padding: 18px; text-align: center; border: 1px solid #ddd;">ChatGPT</th>
+                        <th style="padding: 18px; text-align: center; border: 1px solid #ddd;">Claude</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr style="background: #f9fafb;">
+                        <td style="padding: 15px; border: 1px solid #ddd; font-weight: bold;">Long documents (PDFs, transcripts)</td>
+                        <td style="padding: 15px; border: 1px solid #ddd; text-align: center;">✅ Good</td>
+                        <td style="padding: 15px; border: 1px solid #ddd; text-align: center; background: #fef3c7;">⭐ Excellent</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 15px; border: 1px solid #ddd; font-weight: bold;">Coding & technical help</td>
+                        <td style="padding: 15px; border: 1px solid #ddd; text-align: center;">✅ Good</td>
+                        <td style="padding: 15px; border: 1px solid #ddd; text-align: center; background: #fef3c7;">⭐ Excellent</td>
+                    </tr>
+                    <tr style="background: #f9fafb;">
+                        <td style="padding: 15px; border: 1px solid #ddd; font-weight: bold;">Image generation</td>
+                        <td style="padding: 15px; border: 1px solid #ddd; text-align: center; background: #fef3c7;">⭐ DALL-E built-in</td>
+                        <td style="padding: 15px; border: 1px solid #ddd; text-align: center; color: #dc2626;">❌ Not available</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 15px; border: 1px solid #ddd; font-weight: bold;">Voice chat</td>
+                        <td style="padding: 15px; border: 1px solid #ddd; text-align: center; background: #fef3c7;">⭐ Advanced Voice Mode</td>
+                        <td style="padding: 15px; border: 1px solid #ddd; text-align: center; color: #dc2626;">❌ Text only</td>
+                    </tr>
+                    <tr style="background: #f9fafb;">
+                        <td style="padding: 15px; border: 1px solid #ddd; font-weight: bold;">Web search</td>
+                        <td style="padding: 15px; border: 1px solid #ddd; text-align: center;">✅ Yes (with Plus)</td>
+                        <td style="padding: 15px; border: 1px solid #ddd; text-align: center;">✅ Yes (limited)</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 15px; border: 1px solid #ddd; font-weight: bold;">File types supported</td>
+                        <td style="padding: 15px; border: 1px solid #ddd; text-align: center;">PDF, images, docs</td>
+                        <td style="padding: 15px; border: 1px solid #ddd; text-align: center; background: #fef3c7;">⭐ PDF, images, docs, spreadsheets</td>
+                    </tr>
+                    <tr style="background: #f9fafb;">
+                        <td style="padding: 15px; border: 1px solid #ddd; font-weight: bold;">Context window (memory)</td>
+                        <td style="padding: 15px; border: 1px solid #ddd; text-align: center;">~128K tokens</td>
+                        <td style="padding: 15px; border: 1px solid #ddd; text-align: center; background: #fef3c7;">⭐ ~200K tokens (larger)</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 15px; border: 1px solid #ddd; font-weight: bold;">Best for</td>
+                        <td style="padding: 15px; border: 1px solid #ddd; text-align: center;">Everyday tasks, images, voice</td>
+                        <td style="padding: 15px; border: 1px solid #ddd; text-align: center;">Long docs, writing, analysis</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div style="background: #eff6ff; padding: 25px; border-radius: 12px; border-left: 4px solid #0ea5e9;">
+                <p style="font-size: 1.3em; color: #1e40af; margin: 0;">
+                    <strong>💡 Pro Tip:</strong> Use ChatGPT for quick tasks and image work. Use Claude for deep analysis and long documents.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 5: Projects & Knowledge Spaces -->
+    <div class="slide-container" data-slide="5">
+        <h2>📁 Projects & Knowledge Spaces</h2>
+        <div style="max-width: 1100px;">
+            <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 30px; border-radius: 15px; margin-bottom: 30px; text-align: center;">
+                <p style="font-size: 1.8em; margin: 0; line-height: 1.4;">
+                    <strong>Persistent Context = Your AI Knows Your Work</strong>
+                </p>
+            </div>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-bottom: 30px;">
+                <div style="background: #f0f9ff; padding: 30px; border-radius: 12px; border: 3px solid #0ea5e9;">
+                    <div style="font-size: 1.6em; font-weight: bold; color: #0c4a6e; margin-bottom: 15px;">ChatGPT: Custom GPTs</div>
+                    <div style="font-size: 1.2em; color: #0369a1; line-height: 1.7;">
+                        <strong>What it is:</strong> Pre-configured AI with custom instructions<br><br>
+                        <strong>Best for:</strong> Repeated tasks with same context<br><br>
+                        <strong>Example:</strong> "Brand Voice GPT" with style guide and examples
+                    </div>
+                </div>
+
+                <div style="background: #fef3c7; padding: 30px; border-radius: 12px; border: 3px solid #f59e0b;">
+                    <div style="font-size: 1.6em; font-weight: bold; color: #92400e; margin-bottom: 15px;">Claude: Projects</div>
+                    <div style="font-size: 1.2em; color: #78350f; line-height: 1.7;">
+                        <strong>What it is:</strong> Workspace with reference docs + custom instructions<br><br>
+                        <strong>Best for:</strong> Long-running work with multiple docs<br><br>
+                        <strong>Example:</strong> "Q4 Analysis" with reports, memos, data
+                    </div>
+                </div>
+            </div>
+
+            <div style="background: #dcfce7; padding: 25px; border-radius: 12px; border-left: 4px solid #10b981;">
+                <p style="font-size: 1.3em; color: #065f46; margin: 0;">
+                    <strong>💡 Key Benefit:</strong> You don't have to repeat context every time. The AI "remembers" your key docs and preferences.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 6: When to Use Projects -->
+    <div class="slide-container" data-slide="6">
+        <h2>When to Use Projects/Workspaces</h2>
+        <div style="max-width: 1100px;">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px;">
+                <div>
+                    <h3>✅ GREAT FOR</h3>
+                    <ul style="font-size: 1.4em;">
+                        <li>Multi-doc analysis (reports, memos, transcripts)</li>
+                        <li>Ongoing projects with evolving context</li>
+                        <li>Team workflows with shared reference docs</li>
+                        <li>Tasks requiring brand voice/style consistency</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>⚠️ NOT NEEDED FOR</h3>
+                    <ul style="font-size: 1.4em;">
+                        <li>One-off quick tasks</li>
+                        <li>Simple questions with no context</li>
+                        <li>Tasks where context changes every time</li>
+                        <li>Highly sensitive/confidential work</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div style="background: #fef3c7; padding: 25px; border-radius: 12px; border-left: 4px solid #f59e0b; margin-top: 40px;">
+                <p style="font-size: 1.3em; color: #92400e; margin: 0;">
+                    <strong>💡 Rule of thumb:</strong> If you'll use the same context 3+ times, create a project/workspace.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 7: Demo Setup -->
+    <div class="slide-container" data-slide="7">
+        <h2>🎬 Demo Time: PDF → TL;DR</h2>
+        <div style="max-width: 1000px;">
+            <div class="big-text" style="margin-bottom: 40px;">
+                <strong>Task:</strong> Upload a PDF memo<br>
+                Get TL;DR + open questions + next steps
+            </div>
+
+            <div style="background: #f9fafb; border: 3px solid #667eea; border-radius: 15px; padding: 35px;">
+                <div style="font-size: 1.4em; font-weight: bold; color: #764ba2; margin-bottom: 20px;">The Prompt:</div>
+                <div style="font-family: 'Courier New', monospace; font-size: 1.2em; line-height: 1.8; color: #1f2937; background: white; padding: 25px; border-radius: 8px;">
+                    You are an executive assistant helping me process documents quickly.<br><br>
+
+                    Review this PDF memo and provide:<br>
+                    1. TL;DR (3 bullets, 50 words max)<br>
+                    2. Open questions that need answers<br>
+                    3. Next steps with suggested owners<br><br>
+
+                    Use professional tone. Be concise and actionable.
+                </div>
+            </div>
+
+            <div style="margin-top: 30px; padding: 20px; background: #f0f9ff; border-radius: 10px; border: 2px solid #0ea5e9;">
+                <p style="font-size: 1.2em; color: #0369a1; margin: 0;">
+                    <strong>💡 Watch:</strong> How Claude handles long docs vs ChatGPT
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 8: Your Turn - Exercise -->
+    <div class="slide-container" data-slide="8">
+        <h2>✏️ Your Turn: Create Your Workspace</h2>
+        <div style="max-width: 1000px;">
+            <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 30px; border-radius: 15px; margin-bottom: 30px; text-align: center;">
+                <p style="font-size: 1.6em; margin: 0;">
+                    <strong>Exercise (10 min):</strong> Set up your first project/workspace
+                </p>
+            </div>
+
+            <ul style="font-size: 1.5em; line-height: 1.9;">
+                <li><strong>Step 1:</strong> Pick ChatGPT or Claude (based on your work)</li>
+                <li><strong>Step 2:</strong> Create a new project/Custom GPT</li>
+                <li><strong>Step 3:</strong> Add 1 reference doc (style guide, template, memo)</li>
+                <li><strong>Step 4:</strong> Add your 2 Day 1 prompts as instructions</li>
+                <li><strong>Step 5:</strong> Test it with a real task</li>
+            </ul>
+
+            <div style="background: #dcfce7; padding: 25px; border-radius: 12px; border-left: 4px solid #10b981; margin-top: 35px;">
+                <p style="font-size: 1.3em; color: #065f46; margin: 0;">
+                    <strong>🚀 Goal:</strong> By end of exercise, you have a working workspace for your most common task!
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 9: Prompt Refinements -->
+    <div class="slide-container" data-slide="9">
+        <h2>🔧 Prompt Refinements: Before & After</h2>
+        <div style="max-width: 1100px;">
+            <div style="background: #fef2f2; padding: 25px; border-radius: 12px; border: 3px solid #dc2626; margin-bottom: 30px;">
+                <div style="font-size: 1.5em; font-weight: bold; color: #991b1b; margin-bottom: 15px;">❌ BEFORE (vague)</div>
+                <div style="font-family: 'Courier New', monospace; font-size: 1.2em; color: #7f1d1d; line-height: 1.6;">
+                    "Summarize this document"
+                </div>
+            </div>
+
+            <div style="background: #dcfce7; padding: 25px; border-radius: 12px; border: 3px solid #10b981; margin-bottom: 30px;">
+                <div style="font-size: 1.5em; font-weight: bold; color: #166534; margin-bottom: 15px;">✅ AFTER (specific)</div>
+                <div style="font-family: 'Courier New', monospace; font-size: 1.2em; color: #14532d; line-height: 1.6;">
+                    "You are an investment analyst. Summarize this earnings report in 3 bullets:<br>
+                    1. Key financial metrics (revenue, growth, margins)<br>
+                    2. Main business developments<br>
+                    3. Forward guidance<br><br>
+                    Keep each bullet under 30 words. Professional tone."
+                </div>
+            </div>
+
+            <div style="background: #eff6ff; padding: 25px; border-radius: 12px; border-left: 4px solid #0ea5e9;">
+                <p style="font-size: 1.3em; color: #1e40af; margin: 0;">
+                    <strong>💡 What changed:</strong> Added role, specific format, constraints, and tone. Output quality jumps 10x!
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 10: Voice & Format Constraints -->
+    <div class="slide-container" data-slide="10">
+        <h2>🎨 Adding Voice & Format Constraints</h2>
+        <div style="max-width: 1100px;">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-bottom: 30px;">
+                <div style="background: #f0f9ff; padding: 30px; border-radius: 12px; border-left: 4px solid #0ea5e9;">
+                    <div style="font-size: 1.5em; font-weight: bold; color: #0c4a6e; margin-bottom: 15px;">Voice Constraints</div>
+                    <div style="font-size: 1.2em; color: #0369a1; line-height: 1.7;">
+                        • "Professional and formal"<br>
+                        • "Casual and conversational"<br>
+                        • "Technical but accessible"<br>
+                        • "Match this example: [paste sample]"
+                    </div>
+                </div>
+
+                <div style="background: #fef3c7; padding: 30px; border-radius: 12px; border-left: 4px solid #f59e0b;">
+                    <div style="font-size: 1.5em; font-weight: bold; color: #92400e; margin-bottom: 15px;">Format Constraints</div>
+                    <div style="font-size: 1.2em; color: #78350f; line-height: 1.7;">
+                        • "3 bullets, 50 words each"<br>
+                        • "Table with columns: X | Y | Z"<br>
+                        • "Email format with subject line"<br>
+                        • "JSON with keys: [specify]"
+                    </div>
+                </div>
+            </div>
+
+            <div style="background: #f9fafb; border: 2px solid #667eea; border-radius: 12px; padding: 30px;">
+                <div style="font-size: 1.4em; font-weight: bold; color: #764ba2; margin-bottom: 15px;">Combined Example:</div>
+                <div style="font-family: 'Courier New', monospace; font-size: 1.1em; color: #1f2937; line-height: 1.7;">
+                    "Write in a casual, approachable tone—like you're explaining to a smart colleague.<br><br>
+
+                    Format as:<br>
+                    • 3-sentence summary<br>
+                    • Key insights (bullets)<br>
+                    • One next step<br><br>
+
+                    Total length: under 200 words."
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 11: File Types & Handling -->
+    <div class="slide-container" data-slide="11">
+        <h2>📎 File Types & How to Handle Them</h2>
+        <div style="max-width: 1100px;">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 25px;">
+                <div style="background: #f0f9ff; padding: 25px; border-radius: 12px; border: 3px solid #0ea5e9;">
+                    <div style="font-size: 1.4em; font-weight: bold; color: #0c4a6e; margin-bottom: 15px;">📄 PDFs</div>
+                    <div style="font-size: 1.1em; color: #0369a1; line-height: 1.7;">
+                        <strong>Both tools handle well</strong><br><br>
+                        Claude: Better for 50+ page docs<br>
+                        ChatGPT: Good for shorter PDFs<br><br>
+                        <em>Tip: Ask to "focus on section X"</em>
+                    </div>
+                </div>
+
+                <div style="background: #dcfce7; padding: 25px; border-radius: 12px; border: 3px solid #10b981;">
+                    <div style="font-size: 1.4em; font-weight: bold; color: #065f46; margin-bottom: 15px;">🖼️ Images</div>
+                    <div style="font-size: 1.1em; color: #047857; line-height: 1.7;">
+                        <strong>Both can analyze</strong><br><br>
+                        Screenshots, charts, diagrams<br>
+                        ChatGPT can also generate (DALL-E)<br><br>
+                        <em>Tip: Be specific about what to extract</em>
+                    </div>
+                </div>
+
+                <div style="background: #fef3c7; padding: 25px; border-radius: 12px; border: 3px solid #f59e0b;">
+                    <div style="font-size: 1.4em; font-weight: bold; color: #92400e; margin-bottom: 15px;">📊 Spreadsheets</div>
+                    <div style="font-size: 1.1em; color: #78350f; line-height: 1.7;">
+                        <strong>Claude handles better</strong><br><br>
+                        Can process CSV, Excel files<br>
+                        Extract insights, create summaries<br><br>
+                        <em>Tip: Specify which columns matter</em>
+                    </div>
+                </div>
+
+                <div style="background: #fef2f2; padding: 25px; border-radius: 12px; border: 3px solid #ef4444;">
+                    <div style="font-size: 1.4em; font-weight: bold; color: #991b1b; margin-bottom: 15px;">🎙️ Audio/Video</div>
+                    <div style="font-size: 1.1em; color: #7f1d1d; line-height: 1.7;">
+                        <strong>Need transcripts first</strong><br><br>
+                        Use Otter.ai, Descript, or Whisper<br>
+                        Then upload transcript to AI<br><br>
+                        <em>ChatGPT: Voice chat available</em>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 12: Real-World Use Cases -->
+    <div class="slide-container" data-slide="12">
+        <h2>💼 Real-World Use Cases by Role</h2>
+        <div style="max-width: 1100px;">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 25px;">
+                <div style="background: #f0f9ff; padding: 25px; border-radius: 12px; border-left: 4px solid #0ea5e9;">
+                    <div style="font-size: 1.4em; font-weight: bold; color: #0c4a6e; margin-bottom: 15px;">🎬 Producer / Content</div>
+                    <ul style="font-size: 1.1em; color: #0369a1; line-height: 1.8;">
+                        <li>Turn transcript → show notes</li>
+                        <li>Generate clip moments with timestamps</li>
+                        <li>Create 5 alt headlines</li>
+                        <li>Repurpose content across formats</li>
+                    </ul>
+                </div>
+
+                <div style="background: #dcfce7; padding: 25px; border-radius: 12px; border-left: 4px solid #10b981;">
+                    <div style="font-size: 1.4em; font-weight: bold; color: #065f46; margin-bottom: 15px;">📊 Analyst / ProCap</div>
+                    <ul style="font-size: 1.1em; color: #047857; line-height: 1.8;">
+                        <li>Memo → TL;DR + diligence questions</li>
+                        <li>Extract key metrics from reports</li>
+                        <li>Compare multiple documents</li>
+                        <li>Generate risk assessments</li>
+                    </ul>
+                </div>
+
+                <div style="background: #fef3c7; padding: 25px; border-radius: 12px; border-left: 4px solid #f59e0b;">
+                    <div style="font-size: 1.4em; font-weight: bold; color: #92400e; margin-bottom: 15px;">⚙️ Ops / Meetings</div>
+                    <ul style="font-size: 1.1em; color: #78350f; line-height: 1.8;">
+                        <li>Notes → action items by owner</li>
+                        <li>Create follow-up email drafts</li>
+                        <li>Extract decisions + deadlines</li>
+                        <li>Generate recurring status updates</li>
+                    </ul>
+                </div>
+
+                <div style="background: #fae8ff; padding: 25px; border-radius: 12px; border-left: 4px solid #a855f7;">
+                    <div style="font-size: 1.4em; font-weight: bold; color: #6b21a8; margin-bottom: 15px;">✉️ Communications</div>
+                    <ul style="font-size: 1.1em; color: #7e22ce; line-height: 1.8;">
+                        <li>Draft announcements in brand voice</li>
+                        <li>Adjust tone (formal ↔ casual)</li>
+                        <li>Generate multiple versions</li>
+                        <li>Create email sequences</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 13: Tips for Better Results -->
+    <div class="slide-container" data-slide="13">
+        <h2>⚡ Tips for Better Results</h2>
+        <div style="max-width: 1000px;">
+            <ul style="font-size: 1.5em; line-height: 2;">
+                <li><strong>Upload early:</strong> Add reference docs to your project first, then prompt</li>
+                <li><strong>Be specific about format:</strong> "Table with columns X, Y, Z" beats "organize this"</li>
+                <li><strong>Ask for drafts:</strong> "Give me 3 versions" → pick the best and refine</li>
+                <li><strong>Chain prompts:</strong> "Now take version 2 and make it more casual"</li>
+                <li><strong>Save what works:</strong> Copy successful prompts to your library</li>
+            </ul>
+
+            <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 25px; border-radius: 12px; margin-top: 40px; text-align: center;">
+                <p style="font-size: 1.4em; margin: 0;">
+                    <strong>💡 Remember:</strong> Iteration is normal. First prompt rarely perfect!
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 14: Homework & Practice -->
+    <div class="slide-container" data-slide="14">
+        <h2>📝 Homework</h2>
+        <div style="max-width: 1000px;">
+            <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 35px; border-radius: 15px; margin-bottom: 35px; text-align: center;">
+                <p style="font-size: 1.8em; margin: 0; line-height: 1.4;">
+                    <strong>Run one real task through your workspace</strong>
+                </p>
+            </div>
+
+            <ul style="font-size: 1.5em; line-height: 2;">
+                <li>Use your Day 2 workspace on actual work</li>
+                <li>Time yourself: how many minutes saved?</li>
+                <li>Log the result in team tracker</li>
+                <li>Share your best prompt in Prompt Library</li>
+                <li>Note any issues or questions for Day 3</li>
+            </ul>
+
+            <div style="background: #fef3c7; padding: 25px; border-radius: 12px; border-left: 4px solid #f59e0b; margin-top: 40px;">
+                <p style="font-size: 1.3em; color: #92400e; margin: 0;">
+                    <strong>🚀 Challenge:</strong> Try the same task in both ChatGPT and Claude. Which works better for YOU?
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 15: Q&A -->
+    <div class="slide-container" data-slide="15">
+        <h2>💬 Q&A & Discussion</h2>
+        <div style="max-width: 1000px;">
+            <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 40px; border-radius: 15px; margin-bottom: 35px; text-align: center;">
+                <p style="font-size: 2em; margin: 0; line-height: 1.5;">
+                    <strong>What Questions Do You Have?</strong>
+                </p>
+            </div>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 25px;">
+                <div style="background: #f0f9ff; padding: 30px; border-radius: 12px; border-left: 4px solid #0ea5e9;">
+                    <div style="font-size: 1.5em; font-weight: bold; color: #0c4a6e; margin-bottom: 15px;">❓ Questions</div>
+                    <div style="font-size: 1.2em; color: #0369a1; line-height: 1.7;">
+                        Tool-specific issues?<br>
+                        Workspace setup confusion?<br>
+                        File handling challenges?
+                    </div>
+                </div>
+
+                <div style="background: #f0fdf4; padding: 30px; border-radius: 12px; border-left: 4px solid #10b981;">
+                    <div style="font-size: 1.5em; font-weight: bold; color: #065f46; margin-bottom: 15px;">💡 Share Wins</div>
+                    <div style="font-size: 1.2em; color: #047857; line-height: 1.7;">
+                        What worked in your exercise?<br>
+                        Favorite prompt so far?<br>
+                        Time saved this week?
+                    </div>
+                </div>
+            </div>
+
+            <div style="background: #dcfce7; padding: 25px; border-radius: 12px; border-left: 4px solid #10b981; margin-top: 30px; text-align: center;">
+                <p style="font-size: 1.3em; color: #065f46; margin: 0;">
+                    <strong>📚 Add your best prompts to the library before you leave!</strong>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 16: Resources -->
+    <div class="slide-container" data-slide="16">
+        <h2>📚 Resources</h2>
+        <ul style="font-size: 1.4em;">
+            <li><strong>Prompt Library:</strong> [Link to shared doc]</li>
+            <li><strong>AI Playbook:</strong> [Link to team workflows]</li>
+            <li><strong>Recording:</strong> Available after session</li>
+            <li><strong>ChatGPT Projects:</strong> help.openai.com/en/articles/9491776-creating-a-gpt</li>
+            <li><strong>Claude Projects:</strong> support.anthropic.com/en/articles/9517075-what-are-projects</li>
+        </ul>
+        <div style="margin-top: 50px; font-size: 2em; color: #764ba2;">
+            See you Day 3 for practical workflows!
+        </div>
+    </div>
+
+    <!-- Navigation Controls -->
+    <div class="controls">
+        <button onclick="prevSlide()">← Previous</button>
+        <button onclick="nextSlide()">Next →</button>
+    </div>
+
+    <div class="slide-number">
+        <span id="current-slide">1</span> / <span id="total-slides">16</span>
+    </div>
+
+    <script>
+        let currentSlide = 1;
+        const totalSlides = document.querySelectorAll('.slide-container').length;
+        document.getElementById('total-slides').textContent = totalSlides;
+
+        function showSlide(n) {
+            const slides = document.querySelectorAll('.slide-container');
+
+            if (n > totalSlides) currentSlide = 1;
+            if (n < 1) currentSlide = totalSlides;
+
+            slides.forEach(slide => slide.classList.remove('active'));
+            slides[currentSlide - 1].classList.add('active');
+            document.getElementById('current-slide').textContent = currentSlide;
+        }
+
+        function nextSlide() {
+            currentSlide++;
+            showSlide(currentSlide);
+        }
+
+        function prevSlide() {
+            currentSlide--;
+            showSlide(currentSlide);
+        }
+
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight' || e.key === ' ') {
+                e.preventDefault();
+                nextSlide();
+            } else if (e.key === 'ArrowLeft') {
+                e.preventDefault();
+                prevSlide();
+            }
+        });
+
+        // Initialize
+        showSlide(currentSlide);
+    </script>
+</body>
+</html>
