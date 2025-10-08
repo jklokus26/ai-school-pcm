@@ -3,7 +3,7 @@
   "name": "ai-school-pcm",
   "builds": [
     {
-      "src": "**/*.html",
+      "src": "day1-slides.html",
       "use": "@vercel/static"
     }
   ],
@@ -11,10 +11,8 @@
     {
       "src": "/",
       "dest": "/day1-slides.html"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/$1"
     }
-  ]
+  ],
+  "functions": {},
+  "regions": ["iad1"]
 }
