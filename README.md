@@ -261,4 +261,3 @@ Everything else is secondary.
 ---
 
 *Good luck with Day 1! You're going to do great.* ✨
-
