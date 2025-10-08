@@ -1,16 +1,4 @@
 {
   "version": 2,
-  "name": "ai-school-pcm",
-  "builds": [
-    {
-      "src": "day1-slides.html",
-      "use": "@vercel/static"
-    }
-  ],
-  "routes": [
-    {
-      "src": "/",
-      "dest": "/day1-slides.html"
-    }
-  ]
+  "name": "ai-school-pcm"
 }
