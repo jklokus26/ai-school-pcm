@@ -106,7 +106,14 @@
             z-index: 1000;
         }
 
-        button {
+        .home-button {
+            position: fixed;
+            top: 30px;
+            left: 30px;
+            z-index: 1000;
+        }
+
+        button, .btn {
             background: #667eea;
             color: white;
             border: none;
@@ -115,9 +122,11 @@
             border-radius: 8px;
             cursor: pointer;
             transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
         }
 
-        button:hover {
+        button:hover, .btn:hover {
             background: #764ba2;
             transform: scale(1.05);
         }
@@ -637,8 +646,7 @@
                     <div style="font-size: 1.5em; font-weight: bold; color: #065f46; margin-bottom: 15px;">💡 Share Wins</div>
                     <div style="font-size: 1.2em; color: #047857; line-height: 1.7;">
                         What worked in your exercise?<br>
-                        Favorite prompt so far?<br>
-                        Time saved this week?
+                        Favorite prompt so far?
                     </div>
                 </div>
             </div>
@@ -651,19 +659,43 @@
         </div>
     </div>
 
-    <!-- Slide 16: Resources -->
+    <!-- Slide 16: Wrap Up -->
     <div class="slide-container" data-slide="16">
-        <h2>📚 Resources</h2>
-        <ul style="font-size: 1.4em;">
-            <li><strong>Prompt Library:</strong> [Link to shared doc]</li>
-            <li><strong>AI Playbook:</strong> [Link to team workflows]</li>
-            <li><strong>Recording:</strong> Available after session</li>
-            <li><strong>ChatGPT Projects:</strong> help.openai.com/en/articles/9491776-creating-a-gpt</li>
-            <li><strong>Claude Projects:</strong> support.anthropic.com/en/articles/9517075-what-are-projects</li>
-        </ul>
-        <div style="margin-top: 50px; font-size: 2em; color: #764ba2;">
-            See you Day 3 for practical workflows!
+        <h2>🎯 Remember This</h2>
+        <div style="max-width: 1000px;">
+            <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 50px; border-radius: 20px; text-align: center; margin-bottom: 40px;">
+                <p style="font-size: 2.5em; line-height: 1.5; margin: 0;">
+                    <strong>Pick the Right Tool</strong><br>
+                    <span style="font-size: 0.7em; opacity: 0.9;">ChatGPT for quick tasks · Claude for deep work</span>
+                </p>
+            </div>
+            
+            <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px; margin-bottom: 40px;">
+                <div style="text-align: center;">
+                    <div style="font-size: 3em; margin-bottom: 10px;">📁</div>
+                    <div style="font-size: 1.3em; font-weight: bold; color: #667eea;">Use Projects</div>
+                </div>
+                <div style="text-align: center;">
+                    <div style="font-size: 3em; margin-bottom: 10px;">🔄</div>
+                    <div style="font-size: 1.3em; font-weight: bold; color: #667eea;">Iterate</div>
+                </div>
+                <div style="text-align: center;">
+                    <div style="font-size: 3em; margin-bottom: 10px;">💾</div>
+                    <div style="font-size: 1.3em; font-weight: bold; color: #667eea;">Save What Works</div>
+                </div>
+            </div>
+            
+            <div style="background: #fef3c7; padding: 25px; border-radius: 12px; border-left: 4px solid #f59e0b; text-align: center;">
+                <p style="font-size: 1.5em; color: #92400e; margin: 0;">
+                    <strong>🚀 Next:</strong> Day 3 — Practical Workflows
+                </p>
+            </div>
         </div>
+    </div>
+
+    <!-- Home Button -->
+    <div class="home-button">
+        <a href="../index.html" class="btn">← Home</a>
     </div>
 
     <!-- Navigation Controls -->
