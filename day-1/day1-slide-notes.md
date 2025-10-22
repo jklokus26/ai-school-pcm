@@ -103,7 +103,7 @@
 ---
 
 ## Slide 13 — Demo Time
-**SAY:** "Demo 1: Turn messy notes into a clear email. Demo 2: Extract action items with owners."
+**SAY:** "Demo 1: Get step-by-step ChatGPT Project setup. Demo 2: Create a reusable prompt template."
 
 **ASK:** "As you watch, think: where would YOU use this?"
 

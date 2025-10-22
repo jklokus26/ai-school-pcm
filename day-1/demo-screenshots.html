@@ -115,111 +115,112 @@
             Copy-paste these materials during your live demos
         </p>
         
-        <!-- Demo 1: Notes to Email -->
+        <!-- Demo 1: ChatGPT Project Setup -->
         <div class="demo-section">
-            <h2 class="demo-title">Demo 1: Messy Notes → Professional Email</h2>
+            <h2 class="demo-title">Demo 1: Get Step-by-Step Project Setup</h2>
             
             <div class="instructions">
                 <h3>📋 Instructions:</h3>
                 <ol>
-                    <li>Show the messy notes below to participants</li>
-                    <li>Explain: "I need to turn this into an email my team can actually use"</li>
+                    <li>Explain: "I want to set up a ChatGPT Project but don't know how"</li>
                     <li>Copy-paste the prompt into ChatGPT/Claude</li>
-                    <li>Run it and highlight the results</li>
+                    <li>Run it and highlight how AI gives you exact instructions</li>
+                    <li>Point out: "No guessing—AI walks you through it!"</li>
                 </ol>
             </div>
             
             <div>
-                <span class="label">📝 Messy Notes (show this first):</span>
-                <div class="input-box" id="notes1">talked to sarah about the q4 campaign
-she wants to push launch to dec 15 instead of dec 1
-budget is approved - 50k but still needs final sign off from mark
-need to loop in content team asap because timeline is tight
-also she mentioned the new brand guidelines are ready we should use them
-wants weekly check-ins starting next week</div>
-                <button class="copy-btn" onclick="copyToClipboard('notes1')">Copy Notes</button>
-            </div>
-            
-            <div>
                 <span class="label">🤖 Your Prompt (copy-paste this):</span>
-                <div class="prompt-box" id="prompt1">You are a communications assistant. Using the notes below, draft a concise email to my team in a friendly, professional tone. Keep it under 120 words. End with 2 actionable next steps.
-
-Notes:
-talked to sarah about the q4 campaign
-she wants to push launch to dec 15 instead of dec 1
-budget is approved - 50k but still needs final sign off from mark
-need to loop in content team asap because timeline is tight
-also she mentioned the new brand guidelines are ready we should use them
-wants weekly check-ins starting next week</div>
+                <div class="prompt-box" id="prompt1">I need to create a ChatGPT Project for analyzing weekly sales reports. Give me step-by-step instructions to set this up, including what custom instructions to add.</div>
                 <button class="copy-btn" onclick="copyToClipboard('prompt1')">Copy Prompt</button>
             </div>
             
             <div>
                 <span class="label">✅ Expected Output (AI will generate something like this):</span>
-                <div class="output-box">Subject: Q4 Campaign Update – Timeline Change
+                <div class="output-box">Here's how to set up your ChatGPT Project for weekly sales reports:
 
-Hi team,
+**Step 1: Create the Project**
+1. In ChatGPT, click "Projects" in the left sidebar
+2. Click "New Project"
+3. Name it "Weekly Sales Analysis"
 
-Quick update from my call with Sarah:
+**Step 2: Add Custom Instructions**
+Paste this into the project's custom instructions:
 
-• Launch date moving to Dec 15 (was Dec 1)
-• Budget approved at $50K, pending Mark's final sign-off
-• New brand guidelines are ready—we should incorporate them
-• Weekly check-ins start next week
+"You are a sales data analyst. When I upload weekly sales reports:
+- Summarize total revenue, top products, and key trends
+- Compare to previous week (if data available)
+- Flag any unusual patterns or concerns
+- Format output as: Executive Summary (3 bullets) + Detailed Analysis (table) + Recommendations (2-3 items)
+- Keep tone professional and concise"
 
-The tighter timeline means we need to move quickly.
+**Step 3: Upload Your First Report**
+1. Click "Upload files" in the project
+2. Add your sales report (PDF, CSV, or Excel)
+3. Ask: "Analyze this week's sales report"
 
-Next steps:
-1. Loop in content team immediately
-2. I'll schedule our first weekly check-in for next Tuesday
+**Step 4: Test It**
+Try: "What were the top 3 performing products this week?"
 
-Let me know if you have questions!</div>
+The AI will now use these instructions automatically for every chat in this project!</div>
             </div>
         </div>
         
-        <!-- Demo 2: Extract Actions -->
+        <!-- Demo 2: Create Reusable Prompt -->
         <div class="demo-section">
-            <h2 class="demo-title">Demo 2: Extract Action Items + Owners</h2>
+            <h2 class="demo-title">Demo 2: Create a Reusable Prompt Template</h2>
             
             <div class="instructions">
                 <h3>📋 Instructions:</h3>
                 <ol>
-                    <li>Show the paragraph below to participants</li>
-                    <li>Explain: "We need to pull out who's doing what by when"</li>
+                    <li>Explain: "I have a recurring task but don't know how to prompt it"</li>
                     <li>Copy-paste the prompt into ChatGPT/Claude</li>
-                    <li>Run it and highlight the structured results</li>
+                    <li>Run it and show how AI builds the perfect prompt for you</li>
+                    <li>Point out: "Now you can save and reuse this template!"</li>
                 </ol>
             </div>
             
             <div>
-                <span class="label">📝 Meeting Notes Paragraph (show this first):</span>
-                <div class="input-box" id="notes2">In today's standup, we decided Sarah will draft the project outline and send it to the team by Friday EOD. Mark needs to review the budget spreadsheet and get back to us with questions or approval by Wednesday at noon. I'll schedule a follow-up call with the client for next Monday at 2pm, and everyone should review the new brand guidelines before our next team sync on December 15th. Also, someone needs to update the shared calendar with all these deadlines—I'll take that one.</div>
-                <button class="copy-btn" onclick="copyToClipboard('notes2')">Copy Notes</button>
-            </div>
-            
-            <div>
                 <span class="label">🤖 Your Prompt (copy-paste this):</span>
-                <div class="prompt-box" id="prompt2">Extract all action items from the text below. For each item, list:
-- Owner (who's responsible)
-- Task (what they need to do)
-- Deadline (when it's due)
-
-Format as a simple table.
-
-Text:
-In today's standup, we decided Sarah will draft the project outline and send it to the team by Friday EOD. Mark needs to review the budget spreadsheet and get back to us with questions or approval by Wednesday at noon. I'll schedule a follow-up call with the client for next Monday at 2pm, and everyone should review the new brand guidelines before our next team sync on December 15th. Also, someone needs to update the shared calendar with all these deadlines—I'll take that one.</div>
+                <div class="prompt-box" id="prompt2">I need a prompt that will help me analyze customer feedback emails and extract key themes, sentiment, and action items. Create a reusable prompt template for this task.</div>
                 <button class="copy-btn" onclick="copyToClipboard('prompt2')">Copy Prompt</button>
             </div>
             
             <div>
                 <span class="label">✅ Expected Output (AI will generate something like this):</span>
-                <div class="output-box">| Owner    | Task                                      | Deadline               |
-|----------|-------------------------------------------|------------------------|
-| Sarah    | Draft project outline and send to team    | Friday EOD             |
-| Mark     | Review budget spreadsheet                 | Wednesday at noon      |
-| [You]    | Schedule follow-up call with client       | Next Monday at 2pm     |
-| Everyone | Review new brand guidelines               | December 15th          |
-| [You]    | Update shared calendar with deadlines     | ASAP                   |</div>
+                <div class="output-box">Here's a reusable prompt template for analyzing customer feedback emails:
+
+---
+
+**PROMPT TEMPLATE:**
+
+"You are a customer experience analyst. Analyze the customer feedback email(s) below and provide:
+
+1. **Key Themes** (3-5 main topics mentioned)
+2. **Sentiment Analysis** (Overall: Positive/Neutral/Negative, with brief explanation)
+3. **Action Items** (Specific tasks for our team, with priority: High/Medium/Low)
+4. **Notable Quotes** (1-2 direct quotes that capture key feedback)
+
+Format your response as:
+- Themes: Bullet list
+- Sentiment: One sentence with rating
+- Action Items: Numbered list with [Priority] tags
+- Quotes: Blockquotes
+
+Be concise and actionable.
+
+**Customer Email(s):**
+[PASTE EMAIL(S) HERE]"
+
+---
+
+**How to Use:**
+1. Copy this entire prompt
+2. Replace [PASTE EMAIL(S) HERE] with actual customer emails
+3. Run it to get structured analysis
+4. Save this template in your notes for weekly use!
+
+**Pro Tip:** Add "Compare to previous week's feedback if available" for trend tracking.</div>
             </div>
         </div>
         
@@ -229,9 +230,9 @@ In today's standup, we decided Sarah will draft the project outline and send it 
             <div class="instructions">
                 <h3>🎯 Teaching Points to Highlight:</h3>
                 <ul>
-                    <li><strong>Demo 1:</strong> "Look at the structure... the tone... the next steps. This took 15 seconds!"</li>
-                    <li><strong>Demo 2:</strong> "AI found all 5 tasks... structured them consistently... ready to paste into your task tracker"</li>
-                    <li><strong>Both:</strong> "This is a DRAFT - you'd still edit it, but it saved you 10 minutes"</li>
+                    <li><strong>Demo 1:</strong> "Look at this—AI gave us step-by-step instructions with custom prompts included. No guesswork!"</li>
+                    <li><strong>Demo 2:</strong> "AI built us a complete reusable template in seconds. Now we can use this every week!"</li>
+                    <li><strong>Both:</strong> "This is the secret: Ask AI to teach you how to use AI. Meta-learning!"</li>
                 </ul>
                 
                 <h3>🔄 If Something Goes Wrong:</h3>
