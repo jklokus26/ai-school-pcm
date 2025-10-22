@@ -6,10 +6,13 @@ Learn when to use which AI tool and how to leverage persistent context for bette
 ## Materials
 
 ### Presentation
-- [**Day 2 Slides**](slides.html) - Main presentation deck
+- [**Day 2 Slides**](day2-slides.html) - Main presentation deck (19 slides)
+- [**Presenter Notes**](presenter-notes-day2.md) - Detailed teaching guide with timing
+- [**Demo Materials**](demo-materials-day2.md) - Copy-paste prompts and examples
+- [**Demo Screenshots**](demo-screenshots.html) - Interactive copy-paste interface
 
 ## Quick Start
-1. Open the [Day 2 Slides](slides.html)
+1. Open the [Day 2 Slides](day2-slides.html)
 2. Complete the hands-on workspace exercise
 3. Share your best prompts in the Prompt Library
 
@@ -27,4 +30,4 @@ Learn when to use which AI tool and how to leverage persistent context for bette
 - Share your best prompt in Prompt Library
 
 ---
-[← Back to Home](../index.html) | [Next: Day 3 →](../day-3/)
+[← Back to Home](../index.html) | [← Day 1](../day-1/) | [Next: Day 3 →](../day-3/)

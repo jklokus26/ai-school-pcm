@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 2: Demo Materials - Copy & Paste</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+            background: #f5f5f5;
+            padding: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        h1 {
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+        
+        h2 {
+            color: #764ba2;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 10px;
+        }
+        
+        h3 {
+            color: #0ea5e9;
+            margin-top: 25px;
+            margin-bottom: 15px;
+        }
+        
+        .prompt-box {
+            background: white;
+            border: 2px solid #667eea;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            line-height: 1.6;
+            position: relative;
+        }
+        
+        .copy-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: #667eea;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 12px;
+        }
+        
+        .copy-btn:hover {
+            background: #764ba2;
+        }
+        
+        .note {
+            background: #fef3c7;
+            border-left: 4px solid #f59e0b;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+        
+        .example-output {
+            background: #f0fdf4;
+            border: 2px solid #10b981;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 15px 0;
+        }
+        
+        .home-link {
+            display: inline-block;
+            margin-bottom: 20px;
+            padding: 10px 20px;
+            background: #667eea;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        
+        .home-link:hover {
+            background: #764ba2;
+        }
+    </style>
+</head>
+<body>
+    <a href="../index.html" class="home-link">← Back to Home</a>
+    
+    <h1>Day 2: Demo Materials</h1>
+    <p style="color: #666; font-size: 18px;">Copy-paste these prompts during the session. Click "Copy" buttons for quick access.</p>
+
+    <h2>📄 Demo 1: PDF → TL;DR Analysis</h2>
+    
+    <h3>Core Prompt</h3>
+    <div class="prompt-box">
+        <button class="copy-btn" onclick="copyToClipboard(this)">Copy</button>
+You are an executive assistant helping me process documents quickly.
+
+Review this PDF memo and provide:
+1. TL;DR (3 bullets, 50 words max)
+2. Open questions that need answers
+3. Next steps with suggested owners
+
+Use professional tone. Be concise and actionable.
+    </div>
+    
+    <div class="note">
+        <strong>💡 How to use:</strong> Upload PDF to Claude or ChatGPT → Paste this prompt → Submit
+    </div>
+    
+    <h3>Iteration: Make it More Specific</h3>
+    <div class="prompt-box">
+        <button class="copy-btn" onclick="copyToClipboard(this)">Copy</button>
+Make the TL;DR more specific. Focus on:
+- Financial implications (budget, revenue, costs)
+- Timeline and deadlines
+- Risk factors
+    </div>
+    
+    <h3>Iteration: Change Format</h3>
+    <div class="prompt-box">
+        <button class="copy-btn" onclick="copyToClipboard(this)">Copy</button>
+Reformat the next steps as a table with columns: Task | Owner | Deadline | Priority (High/Medium/Low)
+    </div>
+
+    ---
+
+    <h2>🏛️ Demo 2: LLM Council - Travel Planning</h2>
+    
+    <h3>Question to Ask Both ChatGPT & Claude</h3>
+    <div class="prompt-box">
+        <button class="copy-btn" onclick="copyToClipboard(this)">Copy</button>
+I'm planning a team offsite for 20 people in March. Suggest 3 locations within 2 hours of San Francisco. For each location, provide:
+- Venue type (hotel, retreat center, etc.)
+- Estimated cost per person
+- Key amenities for team building
+- One unique advantage
+
+Keep each recommendation under 100 words.
+    </div>
+    
+    <div class="note">
+        <strong>💡 Demo tip:</strong> Show both outputs side-by-side. Point out differences in detail, creativity, and usefulness.
+    </div>
+
+    ---
+
+    <h2>🎙️ Demo 3: Voice Input</h2>
+    
+    <h3>Mobile Voice Demo</h3>
+    <div class="note">
+        <strong>What to say:</strong> "How much caffeine is in one shot of espresso compared to a cup of matcha tea? Give me the numbers and tell me which is better for sustained energy."
+    </div>
+    
+    <div class="note">
+        <strong>What to show:</strong>
+        <ol>
+            <li>Open ChatGPT mobile app</li>
+            <li>Tap microphone icon</li>
+            <li>Speak the question clearly</li>
+            <li>Show transcription appears as text</li>
+            <li>Submit → get answer</li>
+            <li>"Zero typing. Much faster!"</li>
+        </ol>
+    </div>
+    
+    <h3>Desktop Voice (If using Super Whisper)</h3>
+    <div class="note">
+        <strong>Setup:</strong> Super Whisper installed with hotkey (e.g., F5)<br>
+        <strong>Demo:</strong> Press F5 → speak → press F5 again → text appears in ChatGPT<br>
+        <strong>Cost:</strong> ~$30 one-time purchase (mention this!)
+    </div>
+
+    ---
+
+    <h2>🖼️ Demo 4: Image Upload & Verification</h2>
+    
+    <h3>Step 1: Transcribe First (ALWAYS!)</h3>
+    <div class="prompt-box">
+        <button class="copy-btn" onclick="copyToClipboard(this)">Copy</button>
+Please transcribe all the nutritional information from this label into a table. Include:
+- Serving size
+- Calories
+- Total fat, saturated fat, trans fat
+- Carbohydrates, fiber, sugars
+- Protein
+- Key vitamins/minerals with % daily value
+
+Be precise with the numbers.
+    </div>
+    
+    <div class="note">
+        <strong>⚠️ Critical:</strong> Check that AI read the numbers correctly before proceeding!
+    </div>
+    
+    <h3>Step 2: Analyze (After Verification)</h3>
+    <div class="prompt-box">
+        <button class="copy-btn" onclick="copyToClipboard(this)">Copy</button>
+Based on this nutrition data, is this product healthy? Provide:
+1. Overall assessment (healthy/moderate/unhealthy)
+2. Top 3 concerns
+3. Top 3 positives
+4. One-sentence recommendation
+
+Be specific and cite the numbers.
+    </div>
+
+    ---
+
+    <h2>📋 Exercise: Create Your Workspace</h2>
+    
+    <h3>ChatGPT Custom GPT Template</h3>
+    <div class="prompt-box">
+        <button class="copy-btn" onclick="copyToClipboard(this)">Copy</button>
+Name: [Your Use Case] Assistant
+
+Instructions:
+You are a [role] helping with [specific task].
+
+When I provide [input type], always:
+1. [First deliverable]
+2. [Second deliverable]
+3. [Third deliverable]
+
+Format: [bullets/table/email/etc.]
+Tone: [professional/casual/technical]
+Length: [word count or constraint]
+    </div>
+    
+    <div class="note">
+        <strong>💡 Fill in the brackets with your specifics!</strong><br>
+        Example: "You are a marketing assistant helping with social media content. When I provide a blog post, always: 1) Create 5 tweet variations, 2) Suggest 3 LinkedIn post angles, 3) Draft one email subject line. Format: numbered list. Tone: engaging and conversational. Length: tweets under 280 chars."
+    </div>
+    
+    <h3>Claude Project Template</h3>
+    <div class="prompt-box">
+        <button class="copy-btn" onclick="copyToClipboard(this)">Copy</button>
+Project Name: [Your Use Case]
+
+Custom Instructions:
+You are helping me with [specific domain/task].
+
+For documents I upload, always provide:
+1. [First analysis type]
+2. [Second analysis type]
+3. [Action items or next steps]
+
+Focus on: [key priorities]
+Tone: [professional/casual]
+Format: [preferred structure]
+    </div>
+
+    ---
+
+    <h2>🔄 Iteration Examples</h2>
+    
+    <h3>Make Output Shorter</h3>
+    <div class="prompt-box">
+        <button class="copy-btn" onclick="copyToClipboard(this)">Copy</button>
+This is too long. Condense to exactly 3 bullets, max 20 words each.
+    </div>
+    
+    <h3>Change Tone</h3>
+    <div class="prompt-box">
+        <button class="copy-btn" onclick="copyToClipboard(this)">Copy</button>
+Rewrite this in a more casual, conversational tone. Like explaining to a colleague over coffee.
+    </div>
+    
+    <h3>Add More Detail</h3>
+    <div class="prompt-box">
+        <button class="copy-btn" onclick="copyToClipboard(this)">Copy</button>
+Expand point #2 with specific examples and data to support it.
+    </div>
+    
+    <h3>Change Format</h3>
+    <div class="prompt-box">
+        <button class="copy-btn" onclick="copyToClipboard(this)">Copy</button>
+Convert this into a table with columns: Item | Description | Priority | Status
+    </div>
+
+    ---
+
+    <h2>🆘 Troubleshooting Prompts</h2>
+    
+    <h3>When Output is Too Generic</h3>
+    <div class="prompt-box">
+        <button class="copy-btn" onclick="copyToClipboard(this)">Copy</button>
+This is too generic. Be more specific to [your context]. Use concrete examples and data points.
+    </div>
+    
+    <h3>When You Want Multiple Options</h3>
+    <div class="prompt-box">
+        <button class="copy-btn" onclick="copyToClipboard(this)">Copy</button>
+Give me 3 different versions of this:
+- Version 1: Short and punchy
+- Version 2: Detailed and thorough  
+- Version 3: Data-driven with numbers
+    </div>
+    
+    <h3>When You Need Sources</h3>
+    <div class="prompt-box">
+        <button class="copy-btn" onclick="copyToClipboard(this)">Copy</button>
+Provide sources for each claim. If you're not certain about something, say "I'm not certain, but..." and explain your reasoning.
+    </div>
+
+    ---
+
+    <h2>💾 Save These for Later</h2>
+    
+    <h3>Meeting Notes → Action Items</h3>
+    <div class="prompt-box">
+        <button class="copy-btn" onclick="copyToClipboard(this)">Copy</button>
+Extract all action items from these meeting notes. Format as table:
+Owner | Task | Deadline | Status
+
+If no owner is specified, suggest one based on context.
+If no deadline is mentioned, flag it as "TBD".
+    </div>
+    
+    <h3>Document → Email Summary</h3>
+    <div class="prompt-box">
+        <button class="copy-btn" onclick="copyToClipboard(this)">Copy</button>
+Turn this document into an email summary for executives. Include:
+- Subject line (under 10 words)
+- 3-sentence overview
+- 3 key takeaways (bullets)
+- 1 recommended action
+
+Max 200 words total. Professional tone.
+    </div>
+    
+    <h3>Messy Notes → Clean Outline</h3>
+    <div class="prompt-box">
+        <button class="copy-btn" onclick="copyToClipboard(this)">Copy</button>
+Organize these messy notes into a clean outline. Use hierarchical structure:
+- Main topics (bold)
+  - Subtopics (indented)
+    - Details (further indented)
+
+Remove redundancy. Keep it clear and scannable.
+    </div>
+
+    ---
+
+    <script>
+        function copyToClipboard(button) {
+            const promptBox = button.parentElement;
+            const text = promptBox.textContent.replace('Copy', '').trim();
+            
+            navigator.clipboard.writeText(text).then(() => {
+                button.textContent = 'Copied!';
+                button.style.background = '#10b981';
+                
+                setTimeout(() => {
+                    button.textContent = 'Copy';
+                    button.style.background = '#667eea';
+                }, 2000);
+            }).catch(err => {
+                alert('Failed to copy. Please select and copy manually.');
+            });
+        }
+    </script>
+</body>
+</html>
+

@@ -2,6 +2,22 @@
 
 Welcome! This folder contains everything you need to teach a successful 3-day AI fundamentals sprint.
 
+## **🎉 Recent Updates (Oct 2025)**
+
+**All 3 days now complete and enhanced based on instructor feedback!**
+
+### What's New:
+✅ **Day 3 complete** - 28 slides covering advanced workflows, verification, and realistic expectations  
+✅ **Updated for accuracy** - Current model names (GPT-4o, Claude 3.7, Grok 3)  
+✅ **More engaging** - 9 video placeholders, interactive exercises, copy-paste demos  
+✅ **More applicable** - 50+ copy-ready prompts, role-specific workflows, step-by-step guides  
+✅ **"Learn AI with AI"** - Enhanced with meta-prompting techniques (most valuable feedback!)  
+✅ **Karpathy insights** - Integrated teachings from OpenAI co-founder throughout  
+✅ **Mobile responsive** - Works on phones/tablets for remote participants  
+✅ **Complete teaching system** - Presenter notes, demo materials, troubleshooting for all 3 days  
+
+**See [ENHANCEMENTS-SUMMARY.md](ENHANCEMENTS-SUMMARY.md) for detailed change log.**
+
 ---
 
 ## **📁 What's in This Folder**
@@ -221,15 +237,21 @@ Take 5 minutes to jot down:
 
 ## **📅 Looking Ahead**
 
-### **Day 2 Materials (Coming Next):**
+### **Day 2 Materials:**
 - Tool deep-dive: ChatGPT vs Claude
 - Setting up workspaces/projects
 - Uploading docs for context
+- LLM Council technique
+- Voice input workflows
+- **Complete:** Slides (19), presenter notes, demo materials, demo screenshots
 
 ### **Day 3 Materials:**
-- Practical workflows
-- Team use cases
-- Time-saved tracking
+- Multi-step chained workflows
+- Tool selection decision tree
+- Verification strategies & hallucination prevention
+- Privacy and safe prompting
+- Realistic AI expectations ("decade of agents")
+- **Complete:** Slides (28), presenter notes, demo materials, demo screenshots
 
 ---
 

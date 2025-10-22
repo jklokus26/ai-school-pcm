@@ -1,0 +1,765 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 3: Demo Materials - Copy & Paste</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+            background: #f5f5f5;
+            padding: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        h1 {
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+        
+        h2 {
+            color: #764ba2;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 10px;
+        }
+        
+        h3 {
+            color: #0ea5e9;
+            margin-top: 25px;
+            margin-bottom: 15px;
+        }
+        
+        .prompt-box {
+            background: white;
+            border: 2px solid #667eea;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            line-height: 1.6;
+            position: relative;
+        }
+        
+        .copy-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: #667eea;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 12px;
+        }
+        
+        .copy-btn:hover {
+            background: #764ba2;
+        }
+        
+        .note {
+            background: #fef3c7;
+            border-left: 4px solid #f59e0b;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+        
+        .warning {
+            background: #fef2f2;
+            border-left: 4px solid #dc2626;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+            color: #991b1b;
+        }
+        
+        .success {
+            background: #f0fdf4;
+            border-left: 4px solid #10b981;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+        
+        .home-link {
+            display: inline-block;
+            margin-bottom: 20px;
+            padding: 10px 20px;
+            background: #667eea;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        
+        .home-link:hover {
+            background: #764ba2;
+        }
+        
+        .workflow-box {
+            background: #f9fafb;
+            border: 3px solid #667eea;
+            border-radius: 10px;
+            padding: 25px;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <a href="../index.html" class="home-link">← Back to Home</a>
+    
+    <h1>Day 3: Demo Materials - Advanced Workflows</h1>
+    <p style="color: #666; font-size: 18px;">Copy-paste these prompts for multi-step workflows and verification</p>
+
+    <h2>⛓️ Demo 1: Chained Prompts (Multi-Step Workflow)</h2>
+    
+    <div class="note">
+        <strong>📋 Task:</strong> Turn article → Summary → Expansion → Tweets → Newsletter<br>
+        <strong>⏱️ Time:</strong> ~5 minutes total<br>
+        <strong>🛠️ Tool:</strong> ChatGPT or Claude (either works)
+    </div>
+    
+    <h3>Prompt 1: Summarize</h3>
+    <div class="prompt-box">
+        <button class="copy-btn" onclick="copyToClipboard(this)">Copy</button>
+Summarize this article in 5 key points. Each point should be one sentence, max 20 words.
+
+[Paste your article here]
+    </div>
+    
+    <h3>Prompt 2: Expand One Point</h3>
+    <div class="prompt-box">
+        <button class="copy-btn" onclick="copyToClipboard(this)">Copy</button>
+Take point #2 from your summary and expand it into a 200-word explanation for a general audience. Make it engaging and easy to understand.
+    </div>
+    
+    <h3>Prompt 3: Create Social Content</h3>
+    <div class="prompt-box">
+        <button class="copy-btn" onclick="copyToClipboard(this)">Copy</button>
+Turn that 200-word explanation into 3 tweet variations:
+- Tweet 1: Question format
+- Tweet 2: Stat/fact forward  
+- Tweet 3: Actionable insight
+
+Each under 280 characters.
+    </div>
+    
+    <h3>Prompt 4: Newsletter Intro</h3>
+    <div class="prompt-box">
+        <button class="copy-btn" onclick="copyToClipboard(this)">Copy</button>
+Now create an email newsletter introduction (exactly 100 words) using the 5-point summary from your first response. Include:
+- Engaging hook (1 sentence)
+- The 5 points briefly mentioned
+- Call-to-action to read full article
+
+Tone: professional but conversational.
+    </div>
+    
+    <div class="success">
+        <strong>✅ What you've created:</strong> From one article, you now have: Summary, Blog post, 3 Tweets, and Newsletter intro—all in ~5 minutes!
+    </div>
+
+    ---
+
+    <h2>🔍 Demo 2: Search Tool (Recent Information)</h2>
+    
+    <h3>Test Query (Requires Search)</h3>
+    <div class="prompt-box">
+        <button class="copy-btn" onclick="copyToClipboard(this)">Copy</button>
+What were the biggest tech product announcements in the last 30 days? List the top 3 with:
+- Company name
+- Product name
+- Key feature or innovation
+- Why it matters
+
+Provide sources.
+    </div>
+    
+    <div class="note">
+        <strong>💡 Demo tip:</strong>
+        <ol>
+            <li>First try WITHOUT search → shows knowledge cutoff</li>
+            <li>Then use search (click "Search" in ChatGPT or use Perplexity) → gets current info</li>
+            <li>Point out the citations and sources provided</li>
+        </ol>
+    </div>
+    
+    <div class="warning">
+        <strong>⚠️ Common mistake:</strong> Asking about recent events without using search → AI will hallucinate or give outdated info!
+    </div>
+
+    ---
+
+    <h2>🖼️ Demo 3: Image Verification (Two-Step Method)</h2>
+    
+    <h3>Step 1: Transcribe FIRST</h3>
+    <div class="prompt-box">
+        <button class="copy-btn" onclick="copyToClipboard(this)">Copy</button>
+Please transcribe all the information from this image into a table. Be precise with all numbers, units, and text. Format as:
+| Item | Value | Unit |
+    </div>
+    
+    <div class="warning">
+        <strong>⚠️ CRITICAL:</strong> After AI responds, manually verify 3-5 values match the image exactly. Do NOT skip this step!
+    </div>
+    
+    <h3>Step 2: Analyze (Only After Verification)</h3>
+    <div class="prompt-box">
+        <button class="copy-btn" onclick="copyToClipboard(this)">Copy</button>
+Based on this verified data, provide analysis:
+1. Overall assessment
+2. Top 3 insights
+3. Any concerns or red flags
+4. Recommended next steps
+
+Be specific and cite the numbers.
+    </div>
+    
+    <div class="note">
+        <strong>💡 Use cases:</strong> Nutrition labels, invoices, receipts, forms, charts, screenshots, medical results (non-diagnostic), product specs
+    </div>
+
+    ---
+
+    <h2>🏛️ Demo 4: LLM Council (Multi-Model Comparison)</h2>
+    
+    <h3>Question for All Models</h3>
+    <div class="prompt-box">
+        <button class="copy-btn" onclick="copyToClipboard(this)">Copy</button>
+I'm planning a 3-day team retreat for 15 people near [your city]. Budget: $2,000/person. Suggest 2 venue options with:
+- Location name and type
+- Key amenities for team building
+- Estimated cost breakdown
+- One unique advantage
+
+Keep each option under 100 words.
+    </div>
+    
+    <div class="workflow-box">
+        <strong>Testing sequence:</strong>
+        <ol>
+            <li>Paste in ChatGPT → get Answer A</li>
+            <li>Paste in Claude → get Answer B</li>
+            <li>Compare side-by-side on screen</li>
+            <li>Optional: Follow up: "Compare these two responses. What are the pros/cons of each recommendation?"</li>
+        </ol>
+    </div>
+    
+    <div class="note">
+        <strong>💡 When to use:</strong> Important decisions, creative brainstorming, when you're not sure which tool is better for a task
+    </div>
+
+    ---
+
+    <h2>🧠 Demo 5: Thinking Model Comparison</h2>
+    
+    <h3>Hard Logic Problem</h3>
+    <div class="prompt-box">
+        <button class="copy-btn" onclick="copyToClipboard(this)">Copy</button>
+I have 8 identical-looking coins. One is counterfeit and weighs slightly less than the others. Using only a balance scale, what's the MINIMUM number of weighings needed to identify the counterfeit coin? Explain your strategy step-by-step.
+    </div>
+    
+    <div class="workflow-box">
+        <strong>Comparison test:</strong>
+        <ol>
+            <li>Try with standard GPT-5 → May get suboptimal answer (3 weighings)</li>
+            <li>Try with o4-mini → Should get optimal (2 weighings)</li>
+            <li>Show thinking trace if available</li>
+        </ol>
+    </div>
+    
+    <div class="note">
+        <strong>💡 Correct answer:</strong> 2 weighings minimum. Thinking models are much more likely to get this right.
+    </div>
+
+    ---
+
+    <h2>📊 Workflow Templates (Copy & Customize)</h2>
+
+    <h3>Template 1: Meeting Notes → Action Items</h3>
+    <div class="prompt-box">
+        <button class="copy-btn" onclick="copyToClipboard(this)">Copy</button>
+PROMPT 1:
+Summarize these meeting notes in 3 bullets:
+- Key decisions
+- Main discussions
+- Blockers or concerns
+
+[Paste notes]
+
+---
+
+PROMPT 2:
+Extract all action items into a table:
+| Owner | Task | Deadline | Priority |
+
+If owner/deadline not specified, suggest based on context or mark as TBD.
+
+---
+
+PROMPT 3:
+Draft a follow-up email to attendees including:
+- Subject line
+- 2-sentence summary
+- Action items (from table above)
+- Next meeting date
+
+Max 150 words. Professional but friendly tone.
+    </div>
+
+    <h3>Template 2: Research → Report</h3>
+    <div class="prompt-box">
+        <button class="copy-btn" onclick="copyToClipboard(this)">Copy</button>
+PROMPT 1:
+Review these sources and identify 5 main themes.
+
+[Upload documents or paste text]
+
+---
+
+PROMPT 2:
+For each theme, provide:
+- 1-sentence description
+- Most compelling data point or example
+- Why it matters
+
+Format as table: Theme | Description | Evidence | Significance
+
+---
+
+PROMPT 3:
+Based on this analysis, create a 300-word executive summary with:
+- Context (2 sentences)
+- Key findings (3 bullets)
+- Recommendations (2 specific actions)
+- Next steps
+
+Professional tone. Data-driven.
+    </div>
+
+    <h3>Template 3: Content Repurposing</h3>
+    <div class="prompt-box">
+        <button class="copy-btn" onclick="copyToClipboard(this)">Copy</button>
+PROMPT 1:
+Extract the 10 most important takeaways from this content. Each should be actionable and specific.
+
+[Paste transcript/article]
+
+---
+
+PROMPT 2:
+Turn takeaways #1, #4, and #8 into LinkedIn posts. Each post should:
+- Start with a hook question or statement
+- Explain the insight (100 words)
+- End with engagement question
+
+---
+
+PROMPT 3:
+Create 5 quote graphics from the most impactful statements in the content. Format:
+"Quote text here"
+- Speaker Name, Context
+
+Each quote under 30 words.
+
+---
+
+PROMPT 4:
+Draft a promotional email (200 words) announcing this content. Include:
+- Compelling subject line
+- Preview of top 3 insights
+- Call-to-action to engage with full content
+
+Tone: Engaging and professional.
+    </div>
+
+    ---
+
+    <h2>✅ Verification Prompts (Add to Any Prompt)</h2>
+
+    <h3>General Fact-Checking</h3>
+    <div class="prompt-box">
+        <button class="copy-btn" onclick="copyToClipboard(this)">Copy</button>
+Important: Double-check all facts before responding. Flag any claims you're uncertain about with [VERIFY]. Provide sources for key facts where possible.
+    </div>
+
+    <h3>Source Citation Requirement</h3>
+    <div class="prompt-box">
+        <button class="copy-btn" onclick="copyToClipboard(this)">Copy</button>
+Cite sources for each major claim. Format: "Claim" (Source: URL or document name, page number). If no source available, note it's based on general knowledge and flag uncertainty level.
+    </div>
+
+    <h3>Assumption Declaration</h3>
+    <div class="prompt-box">
+        <button class="copy-btn" onclick="copyToClipboard(this)">Copy</button>
+List all assumptions you're making in your analysis. Format:
+
+Assumptions:
+1. [First assumption and why you're making it]
+2. [Second assumption and why you're making it]
+
+If any assumptions are uncertain, flag them for verification.
+    </div>
+
+    <h3>Document-Only Constraint</h3>
+    <div class="prompt-box">
+        <button class="copy-btn" onclick="copyToClipboard(this)">Copy</button>
+IMPORTANT: Only use information from the documents I've provided. Do not add information from your general knowledge unless explicitly asked. If the documents don't contain enough information to answer fully, say so.
+    </div>
+
+    ---
+
+    <h2>🛡️ Safe Prompting Examples</h2>
+
+    <h3>Safe Data Analysis Prompt</h3>
+    <div class="prompt-box">
+        <button class="copy-btn" onclick="copyToClipboard(this)">Copy</button>
+You are a data analyst helping me understand this spreadsheet.
+
+Analyze the data and provide:
+1. Top 3 trends (cite specific numbers)
+2. Notable outliers or anomalies
+3. Potential data quality issues (missing values, inconsistencies)
+
+IMPORTANT:
+- Show calculations for any percentages or growth rates
+- Flag any assumptions you make
+- If data seems incomplete, note what's missing
+- Double-check all numbers
+
+Format as: Findings (bullets) + Calculations (show work) + Caveats (what to verify)
+    </div>
+
+    <h3>Safe Document Analysis Prompt</h3>
+    <div class="prompt-box">
+        <button class="copy-btn" onclick="copyToClipboard(this)">Copy</button>
+You are an analyst reviewing this report.
+
+Provide:
+1. Executive summary (3 bullets, 50 words max)
+2. Key metrics and trends (cite page numbers)
+3. Stated assumptions or limitations in the document itself
+4. Gaps or questions the document doesn't address
+
+CRITICAL:
+- Only reference information explicitly stated in the document
+- Quote directly when making claims (include page numbers)
+- Distinguish between facts in the document vs your interpretations
+- Flag anything you're inferring vs directly stated
+
+Tone: Objective and analytical.
+    </div>
+
+    ---
+
+    <h2>🔄 Iteration & Refinement Prompts</h2>
+
+    <h3>Make More Specific</h3>
+    <div class="prompt-box">
+        <button class="copy-btn" onclick="copyToClipboard(this)">Copy</button>
+This is too generic. Make it more specific by:
+- Adding concrete examples
+- Citing specific data points or numbers
+- Removing vague language ("some," "many," "often")
+- Using precise terminology
+    </div>
+
+    <h3>Change Perspective</h3>
+    <div class="prompt-box">
+        <button class="copy-btn" onclick="copyToClipboard(this)">Copy</button>
+Rewrite this from the perspective of:
+- [Different audience: executives/technical team/customers/etc.]
+- Adjust language, detail level, and focus accordingly
+- Keep same core information, change presentation
+    </div>
+
+    <h3>Add Structure</h3>
+    <div class="prompt-box">
+        <button class="copy-btn" onclick="copyToClipboard(this)">Copy</button>
+Restructure this content with clear sections:
+1. Context/Background (2 sentences)
+2. Main Content (organized by subtopic)
+3. Key Takeaways (3 bullets)
+4. Next Steps or Recommendations
+
+Use headers for each section.
+    </div>
+
+    <h3>Get Multiple Versions</h3>
+    <div class="prompt-box">
+        <button class="copy-btn" onclick="copyToClipboard(this)">Copy</button>
+Give me 3 different versions of this content:
+
+Version A: Short and punchy (under 100 words)
+Version B: Detailed and comprehensive (300-400 words)
+Version C: Data-heavy with specific numbers and citations
+
+I'll pick the best one to refine further.
+    </div>
+
+    ---
+
+    <h2>🧰 Tool Selection Prompts</h2>
+
+    <h3>Ask AI Which Tool to Use</h3>
+    <div class="prompt-box">
+        <button class="copy-btn" onclick="copyToClipboard(this)">Copy</button>
+I need to [describe your task]. Should I:
+- Use web search for this?
+- Use code interpreter for calculations?
+- Use a thinking model for reasoning?
+- Just use the standard model?
+
+Explain which tools would help and why.
+    </div>
+
+    <h3>Get Workflow Recommendations</h3>
+    <div class="prompt-box">
+        <button class="copy-btn" onclick="copyToClipboard(this)">Copy</button>
+I need to accomplish: [describe end goal]
+
+My starting materials: [list what you have]
+
+What's the most efficient workflow? Break it into steps and tell me:
+- Which AI tool to use for each step
+- The specific prompt for each step
+- What to verify at each stage
+
+Give me a step-by-step blueprint.
+    </div>
+
+    ---
+
+    <h2>📋 Exercise: Build Your Workflow</h2>
+
+    <h3>Workflow Planning Template</h3>
+    <div class="prompt-box">
+        <button class="copy-btn" onclick="copyToClipboard(this)">Copy</button>
+MY WORKFLOW TEMPLATE
+
+Task: [What I need to accomplish]
+
+Input: [What I'm starting with]
+
+Output: [What I need at the end]
+
+Tools needed: [ChatGPT/Claude/Search/Code Interpreter/Thinking]
+
+---
+
+STEP-BY-STEP PROMPTS:
+
+Prompt 1:
+[First small step]
+
+Expected output: [What I should get]
+
+---
+
+Prompt 2:
+[Second step, building on first]
+
+Expected output: [What I should get]
+
+---
+
+Prompt 3:
+[Third step, building on second]
+
+Expected output: [What I should get]
+
+---
+
+Prompt 4 (if needed):
+[Fourth step]
+
+Expected output: [What I should get]
+
+---
+
+VERIFICATION POINTS:
+- After step __: Verify [what to check]
+- After step __: Check [what to verify]
+    </div>
+
+    ---
+
+    <h2>🎯 Real-World Workflow Examples</h2>
+
+    <h3>Workflow: Customer Feedback Analysis</h3>
+    <div class="workflow-box">
+        <strong>Input:</strong> 50+ customer feedback responses<br>
+        <strong>Output:</strong> Executive report with recommendations<br><br>
+        
+        <strong>Step 1:</strong> "Categorize this feedback into: Product Issues, Feature Requests, Praise, Complaints. Show count for each category."<br><br>
+        
+        <strong>Step 2:</strong> "For each category, list the top 3 most frequently mentioned items with example quotes."<br><br>
+        
+        <strong>Step 3:</strong> "Create a priority matrix: Impact (High/Med/Low) vs Effort (High/Med/Low) for the top issues and requests."<br><br>
+        
+        <strong>Step 4:</strong> "Draft an executive summary (300 words) with: Current sentiment, Top 3 priorities, Recommended actions."
+    </div>
+
+    <h3>Workflow: Competitive Intelligence</h3>
+    <div class="workflow-box">
+        <strong>Input:</strong> Competitor websites and news<br>
+        <strong>Output:</strong> Competitive analysis brief<br><br>
+        
+        <strong>Step 1:</strong> "Using web search, research companies A, B, and C. For each: recent news, product launches, market position." (Use Search tool)<br><br>
+        
+        <strong>Step 2:</strong> "Create comparison table: Company | Main Product | Target Market | Pricing | Unique Strength | Weakness"<br><br>
+        
+        <strong>Step 3:</strong> "Which competitor is the biggest threat to our position in [market segment]? Support with specific evidence."<br><br>
+        
+        <strong>Step 4:</strong> "Based on this analysis, recommend 3 strategic moves to compete more effectively."
+    </div>
+
+    <h3>Workflow: Document Synthesis</h3>
+    <div class="workflow-box">
+        <strong>Input:</strong> 5 different reports on related topics<br>
+        <strong>Output:</strong> Synthesized insights document<br><br>
+        
+        <strong>Step 1:</strong> Upload all documents to Claude Project → "What themes appear across ALL documents?"<br><br>
+        
+        <strong>Step 2:</strong> "For each theme, provide: Definition, Evidence from each document (cite which doc), Consensus or disagreement."<br><br>
+        
+        <strong>Step 3:</strong> "Create a synthesis table: Theme | Evidence | Agreement Level | Implications"<br><br>
+        
+        <strong>Step 4:</strong> "Write a 400-word synthesis report: Common findings, Points of disagreement, Recommended next steps for further research."
+    </div>
+
+    ---
+
+    <h2>⚠️ Hallucination Detection Prompts</h2>
+
+    <h3>Challenge AI's Confidence</h3>
+    <div class="prompt-box">
+        <button class="copy-btn" onclick="copyToClipboard(this)">Copy</button>
+Review your previous response. For each factual claim:
+1. Rate your confidence (High/Medium/Low)
+2. Explain your reasoning
+3. Flag anything that should be verified
+
+Format as table: Claim | Confidence | Why | Needs Verification (Y/N)
+    </div>
+
+    <h3>Separate Facts from Inferences</h3>
+    <div class="prompt-box">
+        <button class="copy-btn" onclick="copyToClipboard(this)">Copy</button>
+In your previous response, separate:
+
+FACTS (things explicitly stated in sources):
+- [List facts with citations]
+
+INFERENCES (things you're concluding based on facts):
+- [List inferences with reasoning]
+
+ASSUMPTIONS (things you're assuming to be true):
+- [List assumptions]
+
+Flag anything you're uncertain about.
+    </div>
+
+    ---
+
+    <h2>💾 Template Creation Prompts</h2>
+
+    <h3>Reverse-Engineer a Great Output</h3>
+    <div class="prompt-box">
+        <button class="copy-btn" onclick="copyToClipboard(this)">Copy</button>
+This output is exactly what I needed:
+
+[Paste the great result you got]
+
+---
+
+Please reverse-engineer this. Give me:
+1. The ideal prompt that would reliably produce this format and quality
+2. Key elements that made it work (role, constraints, format, etc.)
+3. A reusable template I can use for similar tasks
+
+Make the template specific enough to be useful but flexible enough to adapt.
+    </div>
+
+    <h3>Create Reusable Template</h3>
+    <div class="prompt-box">
+        <button class="copy-btn" onclick="copyToClipboard(this)">Copy</button>
+I frequently need to [describe recurring task].
+
+Create a prompt template I can reuse that includes:
+- Appropriate role/persona
+- Clear task description
+- Format specification
+- Constraints (tone, length, style)
+- Placeholders for [variable elements]
+
+Make it copy-paste ready with brackets for what I need to fill in each time.
+    </div>
+
+    ---
+
+    <h2>🔧 Troubleshooting Prompts</h2>
+
+    <h3>When AI Misunderstands</h3>
+    <div class="prompt-box">
+        <button class="copy-btn" onclick="copyToClipboard(this)">Copy</button>
+That's not quite what I meant. Let me clarify:
+
+[Explain what you actually want]
+
+Please revise your response based on this clarification.
+    </div>
+
+    <h3>When Output Quality Is Poor</h3>
+    <div class="prompt-box">
+        <button class="copy-btn" onclick="copyToClipboard(this)">Copy</button>
+This output is too generic and not useful. Improve it by:
+1. Being more specific (add examples, data, concrete details)
+2. Removing filler language and vague statements
+3. Making it actionable (what should I DO with this?)
+4. Adding structure (organize logically)
+
+Rewrite with these improvements.
+    </div>
+
+    <h3>When You Need Step-by-Step Help</h3>
+    <div class="prompt-box">
+        <button class="copy-btn" onclick="copyToClipboard(this)">Copy</button>
+I'm trying to [accomplish goal] but I'm not sure how to approach this with AI.
+
+Can you:
+1. Break this task into manageable steps
+2. Give me the exact prompt to use for each step
+3. Tell me which tool to use (ChatGPT/Claude/Search/etc.)
+4. Explain what to verify at each stage
+
+Provide a complete step-by-step blueprint.
+    </div>
+
+    ---
+
+    <script>
+        function copyToClipboard(button) {
+            const promptBox = button.parentElement;
+            const text = promptBox.textContent.replace('Copy', '').trim();
+            
+            navigator.clipboard.writeText(text).then(() => {
+                button.textContent = 'Copied!';
+                button.style.background = '#10b981';
+                
+                setTimeout(() => {
+                    button.textContent = 'Copy';
+                    button.style.background = '#667eea';
+                }, 2000);
+            }).catch(err => {
+                alert('Failed to copy. Please select and copy manually.');
+            });
+        }
+    </script>
+</body>
+</html>
+
