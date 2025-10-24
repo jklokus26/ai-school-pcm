@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo Screenshots - AI 101</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+            background: #f5f5f5;
+            margin: 0;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        h1 {
+            color: #667eea;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .demo-section {
+            margin-bottom: 50px;
+            border: 2px solid #e5e7eb;
+            border-radius: 10px;
+            padding: 30px;
+        }
+        
+        .demo-title {
+            color: #764ba2;
+            font-size: 1.8em;
+            margin-bottom: 20px;
+        }
+        
+        .input-box {
+            background: #f9fafb;
+            border: 2px solid #d1d5db;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 15px 0;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9em;
+            white-space: pre-wrap;
+        }
+        
+        .output-box {
+            background: #f0f9ff;
+            border: 2px solid #0ea5e9;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 15px 0;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9em;
+            white-space: pre-wrap;
+        }
+        
+        .prompt-box {
+            background: #fef3c7;
+            border: 2px solid #f59e0b;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 15px 0;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9em;
+            white-space: pre-wrap;
+        }
+        
+        .label {
+            font-weight: bold;
+            color: #374151;
+            margin-bottom: 10px;
+            display: block;
+        }
+        
+        .copy-btn {
+            background: #667eea;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 0.8em;
+            margin-top: 10px;
+        }
+        
+        .copy-btn:hover {
+            background: #764ba2;
+        }
+        
+        .instructions {
+            background: #ecfdf5;
+            border-left: 4px solid #10b981;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        
+        .instructions h3 {
+            color: #065f46;
+            margin-top: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎬 Demo Materials - AI 101 Day 1</h1>
+        <p style="text-align: center; color: #666; font-size: 1.1em;">
+            Copy-paste these materials during your live demos
+        </p>
+        
+        <!-- Demo 1: Create Reusable Prompt -->
+        <div class="demo-section">
+            <h2 class="demo-title">Demo 1: Create a Reusable Prompt Template</h2>
+            
+            <div>
+                <span class="label">🤖 Your Prompt (copy-paste this):</span>
+                <div class="prompt-box" id="prompt1">I need a prompt that will help me analyze customer feedback emails and extract key themes, sentiment, and action items. Create a reusable prompt template for this task.</div>
+                <button class="copy-btn" onclick="copyToClipboard('prompt1')">Copy Prompt</button>
+            </div>
+            
+            <div>
+                <span class="label">✅ Expected Output (AI will generate something like this):</span>
+                <div class="output-box">Here's a reusable prompt template for analyzing customer feedback emails:
+
+---
+
+**PROMPT TEMPLATE:**
+
+"You are a customer experience analyst. Analyze the customer feedback email(s) below and provide:
+
+1. **Key Themes** (3-5 main topics mentioned)
+2. **Sentiment Analysis** (Overall: Positive/Neutral/Negative, with brief explanation)
+3. **Action Items** (Specific tasks for our team, with priority: High/Medium/Low)
+4. **Notable Quotes** (1-2 direct quotes that capture key feedback)
+
+Format your response as:
+- Themes: Bullet list
+- Sentiment: One sentence with rating
+- Action Items: Numbered list with [Priority] tags
+- Quotes: Blockquotes
+
+Be concise and actionable.
+
+**Customer Email(s):**
+[PASTE EMAIL(S) HERE]"
+
+---
+
+**How to Use:**
+1. Copy this entire prompt
+2. Replace [PASTE EMAIL(S) HERE] with actual customer emails
+3. Run it to get structured analysis
+4. Save this template in your notes for weekly use!
+
+**Pro Tip:** Add "Compare to previous week's feedback if available" for trend tracking.</div>
+            </div>
+        </div>
+        
+        <!-- Demo 2: ChatGPT Project Setup -->
+        <div class="demo-section">
+            <h2 class="demo-title">Demo 2: Get Step-by-Step Project Setup</h2>
+            
+            <div>
+                <span class="label">🤖 Your Prompt (copy-paste this):</span>
+                <div class="prompt-box" id="prompt2">I need to create a ChatGPT Project for analyzing weekly sales reports. Give me step-by-step instructions to set this up, including what custom instructions to add.</div>
+                <button class="copy-btn" onclick="copyToClipboard('prompt2')">Copy Prompt</button>
+            </div>
+            
+            <div>
+                <span class="label">✅ Expected Output (AI will generate something like this):</span>
+                <div class="output-box">Here's how to set up your ChatGPT Project for weekly sales reports:
+
+**Step 1: Create the Project**
+1. In ChatGPT, click "Projects" in the left sidebar
+2. Click "New Project"
+3. Name it "Weekly Sales Analysis"
+
+**Step 2: Add Custom Instructions**
+Paste this into the project's custom instructions:
+
+"You are a sales data analyst. When I upload weekly sales reports:
+- Summarize total revenue, top products, and key trends
+- Compare to previous week (if data available)
+- Flag any unusual patterns or concerns
+- Format output as: Executive Summary (3 bullets) + Detailed Analysis (table) + Recommendations (2-3 items)
+- Keep tone professional and concise"
+
+**Step 3: Upload Your First Report**
+1. Click "Upload files" in the project
+2. Add your sales report (PDF, CSV, or Excel)
+3. Ask: "Analyze this week's sales report"
+
+**Step 4: Test It**
+Try: "What were the top 3 performing products this week?"
+
+The AI will now use these instructions automatically for every chat in this project!</div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        function copyToClipboard(elementId) {
+            const element = document.getElementById(elementId);
+            const text = element.textContent;
+            
+            navigator.clipboard.writeText(text).then(function() {
+                // Change button text temporarily
+                const button = element.nextElementSibling;
+                const originalText = button.textContent;
+                button.textContent = 'Copied!';
+                button.style.background = '#10b981';
+                
+                setTimeout(() => {
+                    button.textContent = originalText;
+                    button.style.background = '#667eea';
+                }, 2000);
+            }).catch(function(err) {
+                console.error('Could not copy text: ', err);
+                alert('Copy failed. Please select and copy manually.');
+            });
+        }
+    </script>
+</body>
+</html>
