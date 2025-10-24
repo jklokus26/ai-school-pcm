@@ -829,45 +829,48 @@
         </div>
     </div>
 
-    <!-- Slide 12: Multi-Document Workflow -->
-    <div class="slide-container" data-slide="12">
-        <h2>📚 Multi-Document Workflow</h2>
+    <!-- Slide 13: Hallucinations Deep Dive -->
+    <div class="slide-container" data-slide="13">
+        <h2>🎭 Hallucinations: How to Catch Them</h2>
         <div style="max-width: 1100px;">
-            <div style="background: #f9fafb; border: 3px solid #667eea; border-radius: 15px; padding: 30px; margin-bottom: 30px;">
-                <div style="font-size: 1.4em; font-weight: bold; color: #764ba2; margin-bottom: 20px;">Real Workflow: Comparing Quarterly Reports</div>
-                <div style="font-size: 1.2em; color: #1f2937; line-height: 1.8;">
-                    <strong>Step 1:</strong> Create Claude Project "Q4 Analysis"<br>
-                    <strong>Step 2:</strong> Upload all 5 quarterly reports<br>
-                    <strong>Step 3:</strong> Ask: "Compare revenue growth across all quarters. Which had highest growth? What drove it?"<br>
-                    <strong>Step 4:</strong> Follow-up: "Create a table summarizing key metrics across all reports"<br>
-                    <strong>Step 5:</strong> Export: "Turn this into an executive summary email"
+            <div style="background: #fef2f2; border: 3px solid #dc2626; border-radius: 15px; padding: 25px; margin-bottom: 20px;">
+                <div style="font-size: 1.4em; font-weight: bold; color: #991b1b; margin-bottom: 12px;">Why AI Hallucinates</div>
+                <div style="font-size: 1.1em; color: #7f1d1d; line-height: 1.5;">
+                    AI is trained to <em>always give an answer</em>—even when it doesn't know. It would rather make something up than say "I don't know."
                 </div>
             </div>
             
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 25px;">
-                <div style="background: #dcfce7; padding: 25px; border-radius: 12px; border-left: 4px solid #10b981;">
-                    <div style="font-size: 1.3em; font-weight: bold; color: #065f46; margin-bottom: 15px;">✅ Why This Works</div>
-                    <div style="font-size: 1.1em; color: #047857; line-height: 1.7;">
-                        • All docs in working memory<br>
-                        • AI can cross-reference<br>
-                        • No manual comparison<br>
-                        • Consistent analysis framework
-                    </div>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 20px;">
+                <div style="background: #f0f9ff; padding: 20px; border-radius: 12px; border: 3px solid #0ea5e9;">
+                    <div style="font-size: 1.2em; font-weight: bold; color: #0c4a6e; margin-bottom: 12px;">🔍 How to Catch Hallucinations</div>
+                    <ul style="font-size: 1em; color: #0369a1; line-height: 1.6;">
+                        <li>Ask for sources/citations</li>
+                        <li>Cross-check with Google</li>
+                        <li>Use search tools for facts</li>
+                        <li>Ask AI: "How confident are you? What could be wrong?"</li>
+                        <li>Compare outputs from 2 AIs</li>
+                    </ul>
                 </div>
                 
-                <div style="background: #fef3c7; padding: 25px; border-radius: 12px; border-left: 4px solid #f59e0b;">
-                    <div style="font-size: 1.3em; font-weight: bold; color: #92400e; margin-bottom: 15px;">⚠️ Watch Out For</div>
-                    <div style="font-size: 1.1em; color: #78350f; line-height: 1.7;">
-                        • Verify numbers are accurate<br>
-                        • Check for missing context<br>
-                        • AI might miss nuances<br>
-                        • Always spot-check critical data
-                    </div>
+                <div style="background: #dcfce7; padding: 20px; border-radius: 12px; border: 3px solid #10b981;">
+                    <div style="font-size: 1.2em; font-weight: bold; color: #065f46; margin-bottom: 12px;">✅ Prevention Strategies</div>
+                    <ul style="font-size: 1em; color: #047857; line-height: 1.6;">
+                        <li>Add to prompts: "Only use information I've provided"</li>
+                        <li>Add: "If unsure, say 'I don't have enough information'"</li>
+                        <li>Upload source documents</li>
+                        <li>Use newer models (less hallucination)</li>
+                        <li>Verify critical info always</li>
+                    </ul>
                 </div>
+            </div>
+            
+            <div style="background: #fef3c7; padding: 20px; border-radius: 12px; border-left: 4px solid #f59e0b;">
+                <p style="font-size: 1.2em; color: #92400e; margin: 0;">
+                    <strong>💡 Rule of thumb:</strong> If it's important, verify it. If it's critical, verify it twice. If it's life/death or legal, don't rely on AI alone.
+                </p>
             </div>
         </div>
     </div>
-
 
     <!-- Slide 14: Privacy & Data Security -->
     <div class="slide-container" data-slide="14">
@@ -1084,7 +1087,7 @@
     </div>
     
     <div class="slide-number">
-        <span id="current-slide">1</span> / <span id="total-slides">19</span>
+        <span id="current-slide">1</span> / <span id="total-slides">20</span>
     </div>
 
     <script>

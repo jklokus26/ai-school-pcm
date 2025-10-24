@@ -80,12 +80,11 @@ Remember: by default, AI is just a zip file—no internet, no calculator. When t
 
 ---
 
-Real workflow for comparing quarterly reports. Step one: create Claude Project called 'Q4 Analysis.' Step two: upload all 5 quarterly reports. Step three: ask to compare revenue growth across all quarters, which had highest growth, what drove it. Step four: create a table summarizing key metrics across all reports. Step five: turn this into an executive summary email. Why this works: all docs are in working memory, AI can cross-reference, no manual comparison needed. Watch out for: verify numbers are accurate, check for missing context, AI might miss nuances, always spot-check critical data.
+Why AI hallucinates: AI is trained to always give an answer, even when it doesn't know. It would rather make something up than say 'I don't know.' How to catch hallucinations: ask for sources, cross-check with Google, use search tools, ask AI how confident it is, compare outputs from 2 AIs. Prevention: add 'only use information I've provided,' add 'if unsure, say I don't have enough information,' upload source documents, use newer models, verify critical info always. Rule of thumb: if it's important, verify it. If it's critical, verify it twice. If it's life, death, or legal, don't rely on AI alone.
 
 [switch slide]
 
 ---
-
 
 Privacy tip: Free and Plus tiers may use your chats for training unless you opt out. Safe to share: public info, your own writing, general questions, and practice materials. Don't share: customer data, financials, proprietary strategies, or passwords. Enterprise versions don't train on your data—ask your IT team if available.
 
