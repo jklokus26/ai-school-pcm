@@ -185,7 +185,10 @@
 
         .day-recording {
             font-size: 0.85rem;
-            opacity: 0.8;
+        }
+
+        .day-recording:hover {
+            background: rgba(255,255,255,0.4) !important;
         }
 
         .resources-section {
@@ -354,7 +357,7 @@
                     </div>
                     <div class="day-footer">
                         <span class="day-status">✓ Available Now</span>
-                        <span class="day-recording">📹 Recording here</span>
+                        <span class="day-recording" onclick="event.preventDefault(); event.stopPropagation(); window.open('https://drive.google.com/file/d/1kRoJI7VJaA33oI6-MbL4IlbJMahgVG7S/view?usp=sharing', '_blank');" style="background: rgba(255,255,255,0.25); padding: 0.4rem 0.8rem; border-radius: 0.5rem; cursor: pointer; font-weight: 600; transition: background 0.2s;">🎥 Watch Recording</span>
                     </div>
                 </a>
             </div>
