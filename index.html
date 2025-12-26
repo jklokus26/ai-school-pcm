@@ -187,8 +187,27 @@
             font-size: 0.85rem;
         }
 
-        .day-recording:hover {
-            background: rgba(255,255,255,0.4) !important;
+        .recording-btn {
+            background: white !important;
+            color: #059669 !important;
+            padding: 0.6rem 1.2rem !important;
+            border-radius: 0.5rem;
+            font-size: 1rem !important;
+            font-weight: 700 !important;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            transition: all 0.2s ease;
+            animation: pulse-glow 2s ease-in-out infinite;
+        }
+
+        .recording-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 16px rgba(0,0,0,0.3);
+        }
+
+        @keyframes pulse-glow {
+            0%, 100% { box-shadow: 0 4px 12px rgba(0,0,0,0.2); }
+            50% { box-shadow: 0 4px 20px rgba(255,255,255,0.5), 0 4px 12px rgba(0,0,0,0.2); }
         }
 
         .resources-section {
@@ -357,7 +376,7 @@
                     </div>
                     <div class="day-footer">
                         <span class="day-status">✓ Available Now</span>
-                        <span class="day-recording" onclick="event.preventDefault(); event.stopPropagation(); window.open('https://drive.google.com/file/d/1kRoJI7VJaA33oI6-MbL4IlbJMahgVG7S/view?usp=sharing', '_blank');" style="background: rgba(255,255,255,0.25); padding: 0.4rem 0.8rem; border-radius: 0.5rem; cursor: pointer; font-weight: 600; transition: background 0.2s;">🎥 Watch Recording</span>
+                        <span class="day-recording recording-btn" onclick="event.preventDefault(); event.stopPropagation(); window.open('https://drive.google.com/file/d/1kRoJI7VJaA33oI6-MbL4IlbJMahgVG7S/view?usp=sharing', '_blank');">🎥 Watch Recording</span>
                     </div>
                 </a>
             </div>
